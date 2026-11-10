@@ -1,0 +1,91 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f94461750-1280.jpg",
+   "files": [
+    "photo-f94461750-500.jpg",
+    "photo-f94461750-960.jpg",
+    "photo-f94461750-1280.jpg"
+   ],
+   "id": "f94461750",
+   "alt": "HIGH COURT OF UGANDA",
+   "by": "Alvinategyeka",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:HIGH_COURT_OF_UGANDA.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f11082077-960.jpg",
+   "files": [
+    "photo-f11082077-500.jpg",
+    "photo-f11082077-960.jpg"
+   ],
+   "id": "f11082077",
+   "alt": "Uganda-Development",
+   "by": "Andrew Regan",
+   "licence": "CC BY-SA 3.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Uganda-Development.JPG",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f62324217.jpg",
+   "files": [
+    "photo-f62324217-500.jpg",
+    "photo-f62324217-960.jpg",
+    "photo-f62324217.jpg"
+   ],
+   "id": "f62324217",
+   "alt": "Uganda High Court building",
+   "by": "Kateregga1",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Uganda_High_Court_building.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f15958584-960.jpg",
+   "files": [
+    "photo-f15958584-500.jpg",
+    "photo-f15958584-960.jpg"
+   ],
+   "id": "f15958584",
+   "alt": "Kampala skyline",
+   "by": "Todd Huffman from Phoenix, AZ",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kampala_skyline.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f182268543-960.jpg",
+   "files": [
+    "photo-f182268543-500.jpg",
+    "photo-f182268543-960.jpg"
+   ],
+   "id": "f182268543",
+   "alt": "Uganda Supreme court building in Kampala 01",
+   "by": "Geossegawa",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Uganda_Supreme_court_building_in_Kampala_01.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f174819714-960.jpg",
+   "files": [
+    "photo-f174819714-500.jpg",
+    "photo-f174819714-960.jpg"
+   ],
+   "id": "f174819714",
+   "alt": "The Court of Appeal of Uganda",
+   "by": "Ssemmanda will",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Court_of_Appeal_of_Uganda.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

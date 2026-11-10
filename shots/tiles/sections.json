@@ -1,0 +1,266 @@
+{
+ "url": "http://127.0.0.1:5300/index.html",
+ "views": {
+  "desktop": {
+   "width": 1440,
+   "height": 900,
+   "navH": 72,
+   "scrollHeight": 4935,
+   "screens": 5.48,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero hero--photo is-still is-entered",
+     "top": 0,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-01-a.jpg",
+       "scrollY": 0
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "about",
+     "cls": "section ground-inverse mo-wh is-done",
+     "top": 900,
+     "h": 370,
+     "hScreens": 0.41,
+     "offGrid": 370,
+     "tiles": [
+      {
+       "file": "desktop-sec-02-a.jpg",
+       "scrollY": 900
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "services",
+     "cls": "section",
+     "top": 1270,
+     "h": 514,
+     "hScreens": 0.57,
+     "offGrid": 514,
+     "tiles": [
+      {
+       "file": "desktop-sec-03-a.jpg",
+       "scrollY": 1270
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "courts",
+     "cls": "section",
+     "top": 1784,
+     "h": 823,
+     "hScreens": 0.91,
+     "offGrid": 823,
+     "tiles": [
+      {
+       "file": "desktop-sec-04-a.jpg",
+       "scrollY": 1784
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "questions",
+     "cls": "section",
+     "top": 2607,
+     "h": 594,
+     "hScreens": 0.66,
+     "offGrid": 594,
+     "tiles": [
+      {
+       "file": "desktop-sec-05-a.jpg",
+       "scrollY": 2607
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "section",
+     "id": "book",
+     "cls": "section",
+     "top": 3201,
+     "h": 760,
+     "hScreens": 0.84,
+     "offGrid": 760,
+     "tiles": [
+      {
+       "file": "desktop-sec-06-a.jpg",
+       "scrollY": 3201
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "tag": "footer",
+     "id": "contact",
+     "cls": "footer closing",
+     "top": 3961,
+     "h": 974,
+     "hScreens": 1.08,
+     "offGrid": 74,
+     "tiles": [
+      {
+       "file": "desktop-sec-07-a.jpg",
+       "scrollY": 3961
+      },
+      {
+       "file": "desktop-sec-07-b.jpg",
+       "scrollY": 4035
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  },
+  "mobile": {
+   "width": 390,
+   "height": 844,
+   "navH": 56,
+   "scrollHeight": 5923,
+   "screens": 7.02,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero hero--photo is-still is-entered",
+     "top": 0,
+     "h": 796,
+     "hScreens": 0.94,
+     "offGrid": 796,
+     "tiles": [
+      {
+       "file": "mobile-sec-01-a.jpg",
+       "scrollY": 0
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "about",
+     "cls": "section ground-inverse mo-wh is-done",
+     "top": 796,
+     "h": 407,
+     "hScreens": 0.48,
+     "offGrid": 407,
+     "tiles": [
+      {
+       "file": "mobile-sec-02-a.jpg",
+       "scrollY": 796
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "services",
+     "cls": "section",
+     "top": 1203,
+     "h": 601,
+     "hScreens": 0.71,
+     "offGrid": 601,
+     "tiles": [
+      {
+       "file": "mobile-sec-03-a.jpg",
+       "scrollY": 1203
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "courts",
+     "cls": "section",
+     "top": 1803,
+     "h": 690,
+     "hScreens": 0.82,
+     "offGrid": 690,
+     "tiles": [
+      {
+       "file": "mobile-sec-04-a.jpg",
+       "scrollY": 1803
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "questions",
+     "cls": "section",
+     "top": 2493,
+     "h": 1158,
+     "hScreens": 1.37,
+     "offGrid": 314,
+     "tiles": [
+      {
+       "file": "mobile-sec-05-a.jpg",
+       "scrollY": 2493
+      },
+      {
+       "file": "mobile-sec-05-b.jpg",
+       "scrollY": 2807
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "section",
+     "id": "book",
+     "cls": "section",
+     "top": 3652,
+     "h": 1143,
+     "hScreens": 1.35,
+     "offGrid": 299,
+     "tiles": [
+      {
+       "file": "mobile-sec-06-a.jpg",
+       "scrollY": 3652
+      },
+      {
+       "file": "mobile-sec-06-b.jpg",
+       "scrollY": 3951
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "tag": "footer",
+     "id": "contact",
+     "cls": "footer closing",
+     "top": 4795,
+     "h": 1129,
+     "hScreens": 1.34,
+     "offGrid": 285,
+     "tiles": [
+      {
+       "file": "mobile-sec-07-a.jpg",
+       "scrollY": 4795
+      },
+      {
+       "file": "mobile-sec-07-b.jpg",
+       "scrollY": 5079
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  }
+ },
+ "at": "2026-11-10T06:42:07.461Z"
+}

@@ -1,0 +1,38 @@
+{
+ "palettes": [
+  "oxblood-grey"
+ ],
+ "types": [
+  "newsreader"
+ ],
+ "dealt": [
+  "newsreader",
+  "figtree",
+  "red-hat"
+ ],
+ "moments": [
+  {
+   "id": "word-highlight",
+   "at": "2026-11-09T22:47:58.735Z",
+   "seed": "40c7489f"
+  }
+ ],
+ "photos": [
+  {
+   "trade": "office",
+   "draft": true,
+   "lead": null,
+   "ids": [],
+   "sections": [
+    "hero",
+    "services",
+    "steps",
+    "steps",
+    "steps",
+    "close"
+   ],
+   "seed": "64gzoo",
+   "at": "2026-11-09T22:49:56.867Z"
+  }
+ ]
+}

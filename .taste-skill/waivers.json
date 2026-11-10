@@ -1,0 +1,7 @@
+[
+  {
+    "check": "section-gaps",
+    "target": "hero--photo / section#services",
+    "reason": "the dealt photo hero's phone layout: layout.css top-aligns the words under the 42svh photograph, so the first screen's content ends short of the fold; the gap to the services h2 is the kit's own hero geometry at 390"
+  }
+]

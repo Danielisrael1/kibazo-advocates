@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-type="service" data-radius="soft" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kibazo Associated Advocates: advocates and trademark agents in Kampala</title>
+<meta name="description" content="Court representation and trademark registration from Buganda Road, Kampala: an approved law firm in Uganda and a registered trademark agent with the Uganda Registration Services Bureau.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kibazo Associated Advocates: advocates and trademark agents in Kampala">
+<meta property="og:description" content="Court representation and trademark registration from Buganda Road, Kampala.">
+<meta property="og:image" content="/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#e2e2e2">
+<!-- <link rel="canonical" href="https://[the client's domain]/"> : the firm's domain is not known yet -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<!-- type: service
+     hero photo · nav nav-centre · close close-photo · footer footer-columns · buttons solid · mark ring
+     palette oxblood-grey (stone ground, oxblood ink; the firm's statement on an oxblood band) · type Newsreader / Hanken Grotesk · radius soft
+     layout: sections as tall as their content (src/page.css), not the kit's one section per screen
+     motion: the hero's entrance, word-highlight in #about, scroll reveals, photographs that drift, the hover layer -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/system.css">
+<link rel="stylesheet" href="/assets/ui/cards.css">
+<link rel="stylesheet" href="/assets/motion/motion.css">
+<link rel="stylesheet" href="/assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="/assets/layout/layout.css">
+<link rel="stylesheet" href="/assets/icons/icon.css">
+<!-- keep this <style> after the links: layout.css resets --ly-scale -->
+<style>
+:root {
+  --p-bg: #e2e2e2; --p-surface: #d6d6d6; --p-ink: #7d0c14; --p-muted: #7a4a4e;
+  --p-accent: #7d0c14; --p-accent-ink: #e2e2e2; --p-action: #7d0c14; --p-action-ink: #e2e2e2;
+  --p-inv-bg: #7d0c14; --p-inv-surface: #862323; --p-inv-ink: #e2e2e2; --p-inv-muted: #d0b3af;
+  --p-inv-accent: #e2e2e2; --p-inv-accent-ink: #7d0c14; --p-inv-action: #e2e2e2; --p-inv-action-ink: #7d0c14;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.018em;
+  --display-tracking-xl: -0.025em;
+  --ly-scale: 1.06;
+}
+</style>
+<!-- the page's own CSS is src/page.css (imported by main.tsx, so Vite links it last): the layout
+     that replaces the kit's one section per screen, the scroll reveals, the photographs' drift and the hover layer. -->
+<!-- the reveals: parts wait hidden only while this class is set; if motion.ts never starts, everything shows after four seconds -->
+<script>document.documentElement.classList.add('rv-js');window.__rv=setTimeout(()=>document.documentElement.classList.add('rv-safe'),4000)</script>
+<!-- the hero's entrance: the words wait for motion.js instead of flashing; the 700ms mark fades them in if it is late -->
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="/assets/backgrounds/backgrounds.js"></script>
+<!-- the dealt moment: the guard, then preloads for the core and word-highlight; system.js mounts it -->
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="/assets/moments/moments.js">
+<link rel="modulepreload" href="/assets/moments/lib.js">
+<link rel="modulepreload" href="/assets/moments/word-highlight/moment.js">
+<script type="module" src="/src/main.tsx"></script>
+</head>
+<body></body>
+</html>
