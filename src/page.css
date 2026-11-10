@@ -20,7 +20,11 @@
 /* an anchor lands with its heading clear of the fixed header */
 html { scroll-padding-top: calc(var(--nav) - 16px); scrollbar-width: none; }
 html::-webkit-scrollbar { width: 0; height: 0; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  /* a keyboard user's focus is brought into view at once: a glide leaves the ring off screen while it runs */
+  html:has(:focus-visible) { scroll-behavior: auto; }
+}
 
 #top > section:not(.hero), #contact { display: block; height: auto; min-height: 0; padding: var(--sec) 0; }
 #top > section:not(.hero) > .wrap, #contact > .wrap { display: block; height: auto; min-height: 0; flex: none; }

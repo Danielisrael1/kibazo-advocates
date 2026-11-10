@@ -1,12 +1,12 @@
 {
- "start": "2026-11-10T09:45:36.561Z",
- "round": 1,
+ "start": "2026-11-10T14:09:53.409Z",
+ "round": 2,
  "idle": 0,
- "errors": 0,
+ "errors": 1,
  "status": "done",
  "history": [
   {
-   "at": "2026-11-10T09:48:12.018Z",
+   "at": "2026-11-10T14:14:19.440Z",
    "mode": "manual",
    "status": "fail",
    "fails": 53,
@@ -15,19 +15,20 @@
    "stopHookActive": false
   },
   {
-   "at": "2026-11-10T09:53:44.624Z",
-   "mode": "done",
-   "status": "done",
-   "reason": "user: escape the rules box and give me your best work as long as its not ai slop; they asked for less blank space, scroll animations and hover effects, so the o",
-   "round": 1
+   "at": "2026-11-10T14:22:47.854Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 41,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
   },
   {
-   "at": "2026-11-10T09:53:54.013Z",
-   "mode": "hook",
-   "host": "claude",
-   "decision": "allow",
-   "reason": "no build is active here",
-   "stopHookActive": true
+   "at": "2026-11-10T14:23:07.065Z",
+   "mode": "done",
+   "status": "done",
+   "reason": "user: escape the rules box and give me your best work as long as its not ai slop; the open findings are the kit's section-height, scroll-motion and caption rule",
+   "round": 2
   }
  ],
  "max": 3,
@@ -39,21 +40,21 @@
   "category": "advocates",
   "primary": "Book a consultation",
   "rounds": 3,
-  "start": "2026-11-10T09:45:36.561Z",
+  "start": "2026-11-10T14:09:53.409Z",
   "by": "gate.mjs --start"
  },
  "manual": true,
- "roundKey": "1fc907814bae363b:17ddf2ba",
+ "roundKey": "b2ad1109c2d77ed9:17ddf2ba",
  "roundFree": false,
  "idleFree": false,
  "blockKey": null,
- "fp": "1fc907814bae363b",
+ "fp": "b2ad1109c2d77ed9",
  "page": "dist/index.html",
  "found": {
   "fails": [
    {
     "check": "scroll-linked",
-    "where": "main#top > section.hero.hero--photo > img.hero__bg \"img: The clock tower of the High Court o\"",
+    "where": "main#top > section.hero.hero--photo > picture.hero__bg",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: scroll())",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
     "widths": [
@@ -64,12 +65,12 @@
      "scroll-linked"
     ],
     "wheres": [
-     "main#top > section.hero.hero--photo > img.hero__bg \"img: The clock tower of the High Court o\""
+     "main#top > section.hero.hero--photo > picture.hero__bg"
     ]
    },
    {
     "check": "scroll-linked",
-    "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > img.ph__img \"img: The High Court of Uganda's building\"",
+    "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\"",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 2 more parts of this section change with the scroll too (img.ph__img, img.ph__img)",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
     "widths": [
@@ -81,12 +82,12 @@
      "scroll-linked"
     ],
     "wheres": [
-     "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > img.ph__img \"img: The High Court of Uganda's building\""
+     "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\""
     ]
    },
    {
     "check": "scroll-linked",
-    "where": "div.wrap > div.grid.grid--top > div.ph.span-6 > img.ph__img \"img: Kampala's city centre by day, the t\"",
+    "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\"",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
     "widths": [
@@ -98,12 +99,12 @@
      "scroll-linked"
     ],
     "wheres": [
-     "div.wrap > div.grid.grid--top > div.ph.span-6 > img.ph__img \"img: Kampala's city centre by day, the t\""
+     "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\""
     ]
    },
    {
     "check": "scroll-linked",
-    "where": "div.wrap > div.closing__cta.close--photo > div.close__media.ph > img.ph__img \"img: Kampala's skyline at dusk, seen acr\"",
+    "where": "div.closing__cta.close--photo > div.close__media.ph > picture.pic > img.ph__img \"img: Kampala's skyline at dusk, seen acr\"",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
     "widths": [
@@ -115,7 +116,7 @@
      "scroll-linked"
     ],
     "wheres": [
-     "div.wrap > div.closing__cta.close--photo > div.close__media.ph > img.ph__img \"img: Kampala's skyline at dusk, seen acr\""
+     "div.closing__cta.close--photo > div.close__media.ph > picture.pic > img.ph__img \"img: Kampala's skyline at dusk, seen acr\""
     ]
    },
    {
@@ -141,7 +142,8 @@
     "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
     "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
     "widths": [
-     1440
+     1440,
+     390
     ],
     "from": "consistency",
     "ids": [
@@ -157,7 +159,8 @@
     "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
     "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
     "widths": [
-     1440
+     1440,
+     390
     ],
     "from": "consistency",
     "ids": [
@@ -459,7 +462,7 @@
    {
     "check": "visual-caption",
     "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > figcaption.ph__label \"High Court\"",
-    "msg": "a figcaption under the picture photo-f62324217.jpg: \"High Court\"; no caption or description under any image, render or visual (house rule)",
+    "msg": "a figcaption under the picture photo-f62324217-1280.avif: \"High Court\"; no caption or description under any image, render or visual (house rule)",
     "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
     "widths": [
      1440
@@ -475,7 +478,7 @@
    {
     "check": "visual-caption",
     "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(2) > figcaption.ph__label \"Court of Appeal\"",
-    "msg": "a figcaption under the picture photo-f174819714-960.jpg: \"Court of Appeal\"; no caption or description under any image, render or visual (house rule)",
+    "msg": "a figcaption under the picture photo-f174819714-960.avif: \"Court of Appeal\"; no caption or description under any image, render or visual (house rule)",
     "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
     "widths": [
      1440
@@ -491,7 +494,7 @@
    {
     "check": "visual-caption",
     "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(3) > figcaption.ph__label \"Supreme Court\"",
-    "msg": "a figcaption under the picture photo-f182268543-960.jpg: \"Supreme Court\"; no caption or description under any image, render or visual (house rule)",
+    "msg": "a figcaption under the picture photo-f182268543-960.avif: \"Supreme Court\"; no caption or description under any image, render or visual (house rule)",
     "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
     "widths": [
      1440
@@ -521,39 +524,19 @@
     ]
    },
    {
-    "check": "focus-visible",
-    "where": "section#services > div.wrap > div.section-head--split.svc__head > a.link \"See the questions\"",
-    "msg": "Tab stop 9, a \"See the questions\": the focus lands on something you cannot see",
-    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "focus-visible"
-    ],
-    "wheres": [
-     "section#services > div.wrap > div.section-head--split.svc__head > a.link \"See the questions\""
-    ]
-   },
-   {
     "check": "section-height",
     "where": "section#about \"The firmKibazo Associated Advocates has \"",
     "msg": "the scene's section is 370px tall (0.4 screens), 530px short of one screen (900px): every section after the hero is one screen or two, 2px either way; a pinned scene is (hold + 1) screens tall, so write data-big-scene-opts='{\"hold\": 1}' (two screens) and keep --h on the section (SR-2)",
     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
     "widths": [
-     1440,
-     390
+     1440
     ],
     "from": "consistency",
     "ids": [
-     "section-height",
-     "screen-short",
-     "screen-height"
+     "section-height"
     ],
     "wheres": [
-     "section#about \"The firmKibazo Associated Advocates has \"",
-     "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
+     "section#about \"The firmKibazo Associated Advocates has \""
     ]
    },
    {
@@ -562,18 +545,14 @@
     "msg": "the section is 514px tall (0.6 screens), 386px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
     "widths": [
-     1440,
-     390
+     1440
     ],
     "from": "consistency",
     "ids": [
-     "section-height",
-     "screen-short",
-     "screen-height"
+     "section-height"
     ],
     "wheres": [
-     "section#services \"Court and trademark servicesSee the ques\"",
-     "#services section.section \"Court and trademark servicesSee \""
+     "section#services \"Court and trademark servicesSee the ques\""
     ]
    },
    {
@@ -586,13 +565,10 @@
     ],
     "from": "consistency",
     "ids": [
-     "section-height",
-     "screen-short",
-     "screen-height"
+     "section-height"
     ],
     "wheres": [
-     "section#questions \"QuestionsWhat clients ask before a first\"",
-     "#questions section.section \"QuestionsWhat clients ask before\""
+     "section#questions \"QuestionsWhat clients ask before a first\""
     ]
    },
    {
@@ -601,18 +577,14 @@
     "msg": "the section starts at 3201px, 399px above the screen grid (4 x 900px): sections start on whole screens (SR-2)",
     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
     "widths": [
-     1440,
-     390
+     1440
     ],
     "from": "consistency",
     "ids": [
-     "section-height",
-     "screen-short",
-     "screen-height"
+     "section-height"
     ],
     "wheres": [
-     "section#book \"Book a consultationWrite what the matter\"",
-     "#book section.section \"Book a consultationWrite what th\""
+     "section#book \"Book a consultationWrite what the matter\""
     ]
    },
    {
@@ -744,38 +716,6 @@
     ]
    },
    {
-    "check": "scroll-reveal",
-    "where": "div.wrap > ol.svc > li:nth-of-type(1) > a.svc__row \"01 Court representation Appearing for cl\"",
-    "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
-    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
-    "widths": [
-     390
-    ],
-    "from": "consistency",
-    "ids": [
-     "scroll-reveal"
-    ],
-    "wheres": [
-     "div.wrap > ol.svc > li:nth-of-type(1) > a.svc__row \"01 Court representation Appearing for cl\""
-    ]
-   },
-   {
-    "check": "scroll-reveal",
-    "where": "div.wrap > ol.svc > li:nth-of-type(2) > a.svc__row \"02 Trademark registration Searches, fili\"",
-    "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
-    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
-    "widths": [
-     390
-    ],
-    "from": "consistency",
-    "ids": [
-     "scroll-reveal"
-    ],
-    "wheres": [
-     "div.wrap > ol.svc > li:nth-of-type(2) > a.svc__row \"02 Trademark registration Searches, fili\""
-    ]
-   },
-   {
     "check": "section-tile",
     "where": "section#courts \"The courts and the registry\"",
     "msg": "the section is 690px tall (0.82 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 634px of it and 154px of the next section, its heading \"Questions\" on screen",
@@ -789,154 +729,6 @@
     ],
     "wheres": [
      "section#courts \"The courts and the registry\""
-    ]
-   },
-   {
-    "check": "neighbour",
-    "where": "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\"",
-    "msg": "framed, 140px of #services section.section \"Court and trademark servicesSee \" shows",
-    "fix": "keep the next section's heading and picture out of this screen",
-    "widths": [
-     1440,
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "neighbour"
-    ],
-    "wheres": [
-     "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
-    ]
-   },
-   {
-    "check": "neighbour",
-    "where": "#services section.section \"Court and trademark servicesSee \"",
-    "msg": "framed, 137px of #courts section.section \"The courts and the registryThe H\" shows",
-    "fix": "keep the next section's heading and picture out of this screen",
-    "widths": [
-     1440,
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "neighbour"
-    ],
-    "wheres": [
-     "#services section.section \"Court and trademark servicesSee \""
-    ]
-   },
-   {
-    "check": "screen-short",
-    "where": "#courts section.section \"The courts and the registryThe H\"",
-    "msg": "823px tall; one screen under the nav is 900px",
-    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
-    "widths": [
-     1440,
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "screen-short",
-     "screen-height"
-    ],
-    "wheres": [
-     "#courts section.section \"The courts and the registryThe H\""
-    ]
-   },
-   {
-    "check": "neighbour",
-    "where": "#questions section.section \"QuestionsWhat clients ask before\"",
-    "msg": "framed, 88px of #book section.section \"Book a consultationWrite what th\" shows",
-    "fix": "keep the next section's heading and picture out of this screen",
-    "widths": [
-     1440
-    ],
-    "from": "layout",
-    "ids": [
-     "neighbour"
-    ],
-    "wheres": [
-     "#questions section.section \"QuestionsWhat clients ask before\""
-    ]
-   },
-   {
-    "check": "neighbour",
-    "where": "#book section.section \"Book a consultationWrite what th\"",
-    "msg": "framed, 140px of the footer shows",
-    "fix": "keep the next section's heading and picture out of this screen",
-    "widths": [
-     1440
-    ],
-    "from": "layout",
-    "ids": [
-     "neighbour"
-    ],
-    "wheres": [
-     "#book section.section \"Book a consultationWrite what th\""
-    ]
-   },
-   {
-    "check": "screen-short",
-    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-    "msg": "796px tall; one screen under the nav is 844px",
-    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
-    "widths": [
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "screen-short"
-    ],
-    "wheres": [
-     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
-    ]
-   },
-   {
-    "check": "neighbour-ground",
-    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-    "msg": "framed, 48px of #about section.section.ground-inverse \"The firmKibazo Associated Advoca\"'s ground shows",
-    "fix": "end the ground with the section",
-    "widths": [
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "neighbour-ground"
-    ],
-    "wheres": [
-     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
-    ]
-   },
-   {
-    "check": "sparse",
-    "where": "#book section.section \"Book a consultationWrite what th\"",
-    "msg": "its content fills 22% of its screen; merge it or give it its visual (0.55 is the aim)",
-    "fix": "fill the section or make it a screen shorter",
-    "widths": [
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "sparse"
-    ],
-    "wheres": [
-     "#book section.section \"Book a consultationWrite what th\""
-    ]
-   },
-   {
-    "check": "hero-fold",
-    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-    "msg": "ends at y 796, above the fold (844)",
-    "fix": "the hero fills the first screen alone, its button inside it",
-    "widths": [
-     390
-    ],
-    "from": "layout",
-    "ids": [
-     "hero-fold"
-    ],
-    "wheres": [
-     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
     ]
    }
   ],
@@ -1035,8 +827,8 @@
    },
    {
     "check": "photo-set",
-    "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > img.ph__img \"photo-f62324217-960.jpg\"",
-    "msg": "6 photographs in more than one look: warm and cool photographs mixed (b* -13 to +8); the odd one out is photo-f62324217-960.jpg",
+    "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"photo-f62324217-960.avif\"",
+    "msg": "6 photographs in more than one look: warm and cool photographs mixed (b* -13 to +8); the odd one out is photo-f62324217-960.avif",
     "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
     "widths": [
      390
@@ -1054,16 +846,18 @@
     "from": "consistency"
    }
   ],
-  "crashed": [],
+  "crashed": [
+   "check.mjs could not run (exit 2: check: Chrome did not start)"
+  ],
   "seconds": {
-   "consistency": 144,
-   "layout": 10
+   "consistency": 231,
+   "layout": 18
   }
  },
  "open": [
   {
    "check": "scroll-linked",
-   "where": "main#top > section.hero.hero--photo > img.hero__bg \"img: The clock tower of the High Court o\"",
+   "where": "main#top > section.hero.hero--photo > picture.hero__bg",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: scroll())",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
    "widths": [
@@ -1074,12 +868,12 @@
     "scroll-linked"
    ],
    "wheres": [
-    "main#top > section.hero.hero--photo > img.hero__bg \"img: The clock tower of the High Court o\""
+    "main#top > section.hero.hero--photo > picture.hero__bg"
    ]
   },
   {
    "check": "scroll-linked",
-   "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > img.ph__img \"img: The High Court of Uganda's building\"",
+   "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\"",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 2 more parts of this section change with the scroll too (img.ph__img, img.ph__img)",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
    "widths": [
@@ -1091,12 +885,12 @@
     "scroll-linked"
    ],
    "wheres": [
-    "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > img.ph__img \"img: The High Court of Uganda's building\""
+    "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\""
    ]
   },
   {
    "check": "scroll-linked",
-   "where": "div.wrap > div.grid.grid--top > div.ph.span-6 > img.ph__img \"img: Kampala's city centre by day, the t\"",
+   "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\"",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
    "widths": [
@@ -1108,12 +902,12 @@
     "scroll-linked"
    ],
    "wheres": [
-    "div.wrap > div.grid.grid--top > div.ph.span-6 > img.ph__img \"img: Kampala's city centre by day, the t\""
+    "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\""
    ]
   },
   {
    "check": "scroll-linked",
-   "where": "div.wrap > div.closing__cta.close--photo > div.close__media.ph > img.ph__img \"img: Kampala's skyline at dusk, seen acr\"",
+   "where": "div.closing__cta.close--photo > div.close__media.ph > picture.pic > img.ph__img \"img: Kampala's skyline at dusk, seen acr\"",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
    "widths": [
@@ -1125,7 +919,7 @@
     "scroll-linked"
    ],
    "wheres": [
-    "div.wrap > div.closing__cta.close--photo > div.close__media.ph > img.ph__img \"img: Kampala's skyline at dusk, seen acr\""
+    "div.closing__cta.close--photo > div.close__media.ph > picture.pic > img.ph__img \"img: Kampala's skyline at dusk, seen acr\""
    ]
   },
   {
@@ -1151,7 +945,8 @@
    "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
    "widths": [
-    1440
+    1440,
+    390
    ],
    "from": "consistency",
    "ids": [
@@ -1167,7 +962,8 @@
    "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
    "widths": [
-    1440
+    1440,
+    390
    ],
    "from": "consistency",
    "ids": [
@@ -1469,7 +1265,7 @@
   {
    "check": "visual-caption",
    "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(1) > figcaption.ph__label \"High Court\"",
-   "msg": "a figcaption under the picture photo-f62324217.jpg: \"High Court\"; no caption or description under any image, render or visual (house rule)",
+   "msg": "a figcaption under the picture photo-f62324217-1280.avif: \"High Court\"; no caption or description under any image, render or visual (house rule)",
    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
    "widths": [
     1440
@@ -1485,7 +1281,7 @@
   {
    "check": "visual-caption",
    "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(2) > figcaption.ph__label \"Court of Appeal\"",
-   "msg": "a figcaption under the picture photo-f174819714-960.jpg: \"Court of Appeal\"; no caption or description under any image, render or visual (house rule)",
+   "msg": "a figcaption under the picture photo-f174819714-960.avif: \"Court of Appeal\"; no caption or description under any image, render or visual (house rule)",
    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
    "widths": [
     1440
@@ -1501,7 +1297,7 @@
   {
    "check": "visual-caption",
    "where": "div.wrap > div.courts > figure.ph.court:nth-of-type(3) > figcaption.ph__label \"Supreme Court\"",
-   "msg": "a figcaption under the picture photo-f182268543-960.jpg: \"Supreme Court\"; no caption or description under any image, render or visual (house rule)",
+   "msg": "a figcaption under the picture photo-f182268543-960.avif: \"Supreme Court\"; no caption or description under any image, render or visual (house rule)",
    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
    "widths": [
     1440
@@ -1531,39 +1327,19 @@
    ]
   },
   {
-   "check": "focus-visible",
-   "where": "section#services > div.wrap > div.section-head--split.svc__head > a.link \"See the questions\"",
-   "msg": "Tab stop 9, a \"See the questions\": the focus lands on something you cannot see",
-   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "focus-visible"
-   ],
-   "wheres": [
-    "section#services > div.wrap > div.section-head--split.svc__head > a.link \"See the questions\""
-   ]
-  },
-  {
    "check": "section-height",
    "where": "section#about \"The firmKibazo Associated Advocates has \"",
    "msg": "the scene's section is 370px tall (0.4 screens), 530px short of one screen (900px): every section after the hero is one screen or two, 2px either way; a pinned scene is (hold + 1) screens tall, so write data-big-scene-opts='{\"hold\": 1}' (two screens) and keep --h on the section (SR-2)",
    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
    "widths": [
-    1440,
-    390
+    1440
    ],
    "from": "consistency",
    "ids": [
-    "section-height",
-    "screen-short",
-    "screen-height"
+    "section-height"
    ],
    "wheres": [
-    "section#about \"The firmKibazo Associated Advocates has \"",
-    "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
+    "section#about \"The firmKibazo Associated Advocates has \""
    ]
   },
   {
@@ -1572,18 +1348,14 @@
    "msg": "the section is 514px tall (0.6 screens), 386px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
    "widths": [
-    1440,
-    390
+    1440
    ],
    "from": "consistency",
    "ids": [
-    "section-height",
-    "screen-short",
-    "screen-height"
+    "section-height"
    ],
    "wheres": [
-    "section#services \"Court and trademark servicesSee the ques\"",
-    "#services section.section \"Court and trademark servicesSee \""
+    "section#services \"Court and trademark servicesSee the ques\""
    ]
   },
   {
@@ -1596,13 +1368,10 @@
    ],
    "from": "consistency",
    "ids": [
-    "section-height",
-    "screen-short",
-    "screen-height"
+    "section-height"
    ],
    "wheres": [
-    "section#questions \"QuestionsWhat clients ask before a first\"",
-    "#questions section.section \"QuestionsWhat clients ask before\""
+    "section#questions \"QuestionsWhat clients ask before a first\""
    ]
   },
   {
@@ -1611,18 +1380,14 @@
    "msg": "the section starts at 3201px, 399px above the screen grid (4 x 900px): sections start on whole screens (SR-2)",
    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
    "widths": [
-    1440,
-    390
+    1440
    ],
    "from": "consistency",
    "ids": [
-    "section-height",
-    "screen-short",
-    "screen-height"
+    "section-height"
    ],
    "wheres": [
-    "section#book \"Book a consultationWrite what the matter\"",
-    "#book section.section \"Book a consultationWrite what th\""
+    "section#book \"Book a consultationWrite what the matter\""
    ]
   },
   {
@@ -1754,38 +1519,6 @@
    ]
   },
   {
-   "check": "scroll-reveal",
-   "where": "div.wrap > ol.svc > li:nth-of-type(1) > a.svc__row \"01 Court representation Appearing for cl\"",
-   "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
-   "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
-   "widths": [
-    390
-   ],
-   "from": "consistency",
-   "ids": [
-    "scroll-reveal"
-   ],
-   "wheres": [
-    "div.wrap > ol.svc > li:nth-of-type(1) > a.svc__row \"01 Court representation Appearing for cl\""
-   ]
-  },
-  {
-   "check": "scroll-reveal",
-   "where": "div.wrap > ol.svc > li:nth-of-type(2) > a.svc__row \"02 Trademark registration Searches, fili\"",
-   "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
-   "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
-   "widths": [
-    390
-   ],
-   "from": "consistency",
-   "ids": [
-    "scroll-reveal"
-   ],
-   "wheres": [
-    "div.wrap > ol.svc > li:nth-of-type(2) > a.svc__row \"02 Trademark registration Searches, fili\""
-   ]
-  },
-  {
    "check": "section-tile",
    "where": "section#courts \"The courts and the registry\"",
    "msg": "the section is 690px tall (0.82 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 634px of it and 154px of the next section, its heading \"Questions\" on screen",
@@ -1800,158 +1533,10 @@
    "wheres": [
     "section#courts \"The courts and the registry\""
    ]
-  },
-  {
-   "check": "neighbour",
-   "where": "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\"",
-   "msg": "framed, 140px of #services section.section \"Court and trademark servicesSee \" shows",
-   "fix": "keep the next section's heading and picture out of this screen",
-   "widths": [
-    1440,
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "neighbour"
-   ],
-   "wheres": [
-    "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
-   ]
-  },
-  {
-   "check": "neighbour",
-   "where": "#services section.section \"Court and trademark servicesSee \"",
-   "msg": "framed, 137px of #courts section.section \"The courts and the registryThe H\" shows",
-   "fix": "keep the next section's heading and picture out of this screen",
-   "widths": [
-    1440,
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "neighbour"
-   ],
-   "wheres": [
-    "#services section.section \"Court and trademark servicesSee \""
-   ]
-  },
-  {
-   "check": "screen-short",
-   "where": "#courts section.section \"The courts and the registryThe H\"",
-   "msg": "823px tall; one screen under the nav is 900px",
-   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
-   "widths": [
-    1440,
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "screen-short",
-    "screen-height"
-   ],
-   "wheres": [
-    "#courts section.section \"The courts and the registryThe H\""
-   ]
-  },
-  {
-   "check": "neighbour",
-   "where": "#questions section.section \"QuestionsWhat clients ask before\"",
-   "msg": "framed, 88px of #book section.section \"Book a consultationWrite what th\" shows",
-   "fix": "keep the next section's heading and picture out of this screen",
-   "widths": [
-    1440
-   ],
-   "from": "layout",
-   "ids": [
-    "neighbour"
-   ],
-   "wheres": [
-    "#questions section.section \"QuestionsWhat clients ask before\""
-   ]
-  },
-  {
-   "check": "neighbour",
-   "where": "#book section.section \"Book a consultationWrite what th\"",
-   "msg": "framed, 140px of the footer shows",
-   "fix": "keep the next section's heading and picture out of this screen",
-   "widths": [
-    1440
-   ],
-   "from": "layout",
-   "ids": [
-    "neighbour"
-   ],
-   "wheres": [
-    "#book section.section \"Book a consultationWrite what th\""
-   ]
-  },
-  {
-   "check": "screen-short",
-   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-   "msg": "796px tall; one screen under the nav is 844px",
-   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
-   "widths": [
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "screen-short"
-   ],
-   "wheres": [
-    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
-   ]
-  },
-  {
-   "check": "neighbour-ground",
-   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-   "msg": "framed, 48px of #about section.section.ground-inverse \"The firmKibazo Associated Advoca\"'s ground shows",
-   "fix": "end the ground with the section",
-   "widths": [
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "neighbour-ground"
-   ],
-   "wheres": [
-    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
-   ]
-  },
-  {
-   "check": "sparse",
-   "where": "#book section.section \"Book a consultationWrite what th\"",
-   "msg": "its content fills 22% of its screen; merge it or give it its visual (0.55 is the aim)",
-   "fix": "fill the section or make it a screen shorter",
-   "widths": [
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "sparse"
-   ],
-   "wheres": [
-    "#book section.section \"Book a consultationWrite what th\""
-   ]
-  },
-  {
-   "check": "hero-fold",
-   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
-   "msg": "ends at y 796, above the fold (844)",
-   "fix": "the hero fills the first screen alone, its button inside it",
-   "widths": [
-    390
-   ],
-   "from": "layout",
-   "ids": [
-    "hero-fold"
-   ],
-   "wheres": [
-    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
-   ]
   }
  ],
  "waived": [],
  "warnCount": 11,
- "at": "2026-11-10T09:53:44.645Z",
- "doneReason": "user: escape the rules box and give me your best work as long as its not ai slop; they asked for less blank space, scroll animations and hover effects, so the one-section-per-screen, no-scroll-reveal, no-caption and no-scroll-motion findings stay open by their choice"
+ "at": "2026-11-10T14:23:07.081Z",
+ "doneReason": "user: escape the rules box and give me your best work as long as its not ai slop; the open findings are the kit's section-height, scroll-motion and caption rules the user set aside"
 }
