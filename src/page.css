@@ -42,7 +42,9 @@ h2 { text-wrap: balance; }
 /* one frame for every photograph below the hero: the picture is 12% taller than its frame, so it can
    drift without showing an edge */
 .ph { position: relative; display: block; margin: 0; overflow: clip; isolation: isolate; border-radius: var(--r-lg); background: var(--surface); }
-.ph > .ph__img {
+/* the <picture> round a photograph takes no box: its <img> is laid out as the frame's own child */
+picture.pic { display: contents; }
+.ph .ph__img {
   position: absolute; left: 0; top: -6%; width: 100%; height: 112%; max-width: none; object-fit: cover;
   transition: transform .9s var(--e-out), scale 1.4s var(--e-out) var(--rv-d, 0s), filter .5s ease;
 }
@@ -167,10 +169,10 @@ h2 { text-wrap: balance; }
 @media (hover: hover) and (pointer: fine) {
   .nav__logo:hover .mark { transform: scale(1.22); }
 
-  .ph:hover > .ph__img { transform: scale(1.05); }
+  .ph:hover .ph__img { transform: scale(1.05); }
   .ph:hover > .ph__label { background: var(--ink); color: var(--bg); }
   /* one court under the pointer keeps its colour; the other two step back */
-  .courts:has(.court:hover) .court:not(:hover) > .ph__img { filter: saturate(.25); }
+  .courts:has(.court:hover) .court:not(:hover) .ph__img { filter: saturate(.25); }
 
   .svc__row:hover::before { transform: scaleX(1); transform-origin: left; }
   .svc__row:hover .svc__name { translate: 12px 0; }
@@ -190,12 +192,12 @@ h2 { text-wrap: balance; }
   /* a photograph is unmasked from its top edge while the picture settles from 1.18. The mask is on
      the picture, not the frame: a frame clipped to nothing is never reported as on screen */
   html.rv-js [data-rv="photo"] { transition: background-color .4s ease var(--rv-d, 0s); }
-  html.rv-js [data-rv="photo"] > .ph__img {
+  html.rv-js [data-rv="photo"] .ph__img {
     clip-path: inset(0);
     transition: clip-path 1.2s var(--e-out) var(--rv-d, 0s), scale 1.4s var(--e-out) var(--rv-d, 0s), transform .9s var(--e-out), filter .5s ease;
   }
   html.rv-js:not(.rv-safe) [data-rv="photo"]:not(.is-in) { background-color: transparent; }
-  html.rv-js:not(.rv-safe) [data-rv="photo"]:not(.is-in) > .ph__img { clip-path: inset(0 0 100% 0); scale: 1.18; }
+  html.rv-js:not(.rv-safe) [data-rv="photo"]:not(.is-in) .ph__img { clip-path: inset(0 0 100% 0); scale: 1.18; }
   html.rv-js [data-rv="photo"] > .ph__label { transition: opacity .6s ease calc(var(--rv-d, 0s) + .5s), background-color .3s ease, color .3s ease; }
   html.rv-js:not(.rv-safe) [data-rv="photo"]:not(.is-in) > .ph__label { opacity: 0; }
 
@@ -214,7 +216,7 @@ h2 { text-wrap: balance; }
 /* ------------------------------------------------------------------ drift: photographs move a little slower than the page */
 @supports (animation-timeline: view()) {
   @media screen and (prefers-reduced-motion: no-preference) {
-    .ph > .ph__img { animation: ph-drift linear both; animation-timeline: view(); }
+    .ph .ph__img { animation: ph-drift linear both; animation-timeline: view(); }
     @keyframes ph-drift { from { translate: 0 -5%; } to { translate: 0 5%; } }
     /* the hero's photograph falls behind as the first screen leaves (a full-bleed photograph only:
        below 1024 it is a band over the words) */

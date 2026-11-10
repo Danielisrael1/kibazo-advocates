@@ -17,14 +17,16 @@ buttons, nav and form; `src/page.css` sets the page's own layout and motion on t
 | Path | What |
 |---|---|
 | `src/content.ts` | Every word on the page. Change copy here, not in components. |
-| `src/photos.ts` | The six photographs: files, `srcset`, alt text, crop positions. |
+| `src/photos.ts` | The six photographs: files, `srcset` (AVIF and JPEG), alt text, crop positions. |
 | `src/components/` | One component per section, in page order: Nav, Hero, About, Services, Courts, Questions, Book, Closing. |
 | `src/page.css` | The page's layout (sections as tall as their content), the scroll reveals, the photographs' drift and the hover states. |
 | `src/motion.ts` | Adds `.is-in` to `[data-rv]` parts as they are scrolled to, marks the nav link of the section on screen, and writes a clicked service's name into the form. |
 | `src/kit.ts` | Loads the design kit's scripts, and starts `motion.ts`, after every section has hydrated. |
 | `index.html` | The head: title, description, share tags, palette tokens, fonts. |
 | `public/assets/` | The design kit (system.css, layout, motion, moments). Do not edit; update by copying a newer kit. |
-| `public/assets/img/` | The photographs. `credits.json` records their licences. |
+| `photos-src/` | The six master photographs, one JPEG each. Not served. |
+| `scripts/images.mjs` | `npm run images`: makes every AVIF and JPEG in `public/assets/img/` from the masters. |
+| `public/assets/img/` | The photographs as served: AVIF, with a JPEG of each width for browsers that cannot read AVIF. `credits.json` records their licences. |
 | `public/credits.html` | Photograph credits page, linked from the footer. |
 | `scripts/prerender.mjs` | Writes the rendered React tree into `dist/index.html` after `vite build`. |
 | `.taste-skill/` | The kit's build state, plan, copy draft and report. |
@@ -32,8 +34,10 @@ buttons, nav and form; `src/page.css` sets the page's own layout and motion on t
 ## Before this goes live
 
 1. **Photographs.** All six are licensed stand-ins from Wikimedia Commons (the courts, the city).
-   Replace them with the firm's own: drop files in `public/assets/img/`, update `src/photos.ts`
-   (keep `width`/`height` honest and give each a 500/960/1280 size), then either regenerate
+   Replace them with the firm's own: put the master in `photos-src/` as `photo-<id>.jpg`, add a
+   JPEG for each width the page should offer to `public/assets/img/` (`photo-<id>-500.jpg`, `-960`,
+   `-1280`; any resize will do, the script rewrites them), run `npm run images`, and update
+   `src/photos.ts` (keep `width`/`height` honest). Then either regenerate
    `credits.html` or, once every picture is the firm's own, delete the credits line in `Closing.tsx`.
 2. **The form.** `firm.formAction` in `src/content.ts` is a `mailto:` on a `.example` address.
    Point it at the firm's email, or set `data-endpoint` on the form to a form service's URL

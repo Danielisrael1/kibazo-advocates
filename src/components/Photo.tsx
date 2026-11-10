@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { Photo as PhotoData } from '../photos'
+import Pic from './Pic'
 
 // One photograph in the page's frame (.ph, page.css): the frame's size comes from its class, the
 // picture fills it, is unmasked when scrolled to and drifts a little as the page moves. A label
@@ -18,19 +19,12 @@ export default function Photo({
   const Tag = label ? 'figure' : 'div'
   return (
     <Tag className={`ph ${className}`.trim()} data-rv="photo" style={delay ? ({ '--rv-d': `${delay}ms` } as CSSProperties) : undefined}>
-      <img
+      <Pic
+        photo={photo}
         className="ph__img"
-        src={photo.src}
-        srcSet={photo.srcset}
-        sizes={photo.sizes}
-        width={photo.width}
-        height={photo.height}
-        alt={photo.alt}
         style={photo.pos ? ({ objectPosition: photo.pos } as CSSProperties) : undefined}
         loading="lazy"
         decoding="async"
-        data-source="stand-in"
-        data-subject={photo.subject}
       />
       {label ? <figcaption className="ph__label">{label}</figcaption> : null}
     </Tag>

@@ -1,11 +1,13 @@
 // The six photographs (the hero, the three courts, the city by day and at dusk). Every one is a licensed stand-in from Wikimedia Commons (credits in the
 // footer line and /credits.html) until the firm supplies its own; the report lists each with the
 // photograph to shoot in its place. Alt text is written new: the files' titles name other things.
-// `sizes` is generous on purpose: the frames crop with object-fit: cover, so a frame needs the
+// Each is served as AVIF, with the JPEGs kept for a browser that cannot read one (scripts/images.mjs
+// makes both from the masters in photos-src/). `sizes` is generous on purpose: the frames crop with object-fit: cover, so a frame needs the
 // pixels of its height, not just its width, or the browser picks a file it then blows up.
 export type Photo = {
   src: string
   srcset: string
+  avif: string
   sizes?: string
   width: number
   height: number
@@ -17,13 +19,14 @@ export type Photo = {
 }
 
 const img = (file: string) => `/assets/img/${file}`
-const set = (id: string, widths: string[]) => widths.map((w) => `${img(`photo-${id}-${w}.jpg`)} ${w}w`).join(', ')
+const set = (id: string, widths: string[], ext = 'jpg') => widths.map((w) => `${img(`photo-${id}-${w}.${ext}`)} ${w}w`).join(', ')
 const HALF = '(max-width: 639px) 170vw, (max-width: 1023px) 120vw, 75vw'
 
 export const photos = {
   hero: {
     src: img('photo-f94461750-1920.jpg'),
     srcset: set('f94461750', ['500', '960', '1280', '1920']),
+    avif: set('f94461750', ['500', '960', '1280', '1920'], 'avif'),
     sizes: '(max-width: 639px) 180vw, (max-width: 1279px) 150vw, 125vw',
     width: 1920,
     height: 991,
@@ -36,6 +39,7 @@ export const photos = {
   supreme: {
     src: img('photo-f182268543-960.jpg'),
     srcset: set('f182268543', ['500', '960']),
+    avif: set('f182268543', ['500', '960'], 'avif'),
     sizes: HALF,
     width: 960,
     height: 722,
@@ -46,6 +50,7 @@ export const photos = {
   courtA: {
     src: img('photo-f62324217.jpg'),
     srcset: `${img('photo-f62324217-500.jpg')} 500w, ${img('photo-f62324217-960.jpg')} 960w, ${img('photo-f62324217.jpg')} 1280w`,
+    avif: set('f62324217', ['500', '960', '1280'], 'avif'),
     sizes: HALF,
     width: 1280,
     height: 719,
@@ -56,6 +61,7 @@ export const photos = {
   courtB: {
     src: img('photo-f174819714-960.jpg'),
     srcset: set('f174819714', ['500', '960']),
+    avif: set('f174819714', ['500', '960'], 'avif'),
     sizes: HALF,
     width: 960,
     height: 787,
@@ -66,6 +72,7 @@ export const photos = {
   book: {
     src: img('photo-f11082077-960.jpg'),
     srcset: set('f11082077', ['500', '960', '1280']),
+    avif: set('f11082077', ['500', '960', '1280'], 'avif'),
     sizes: HALF,
     width: 960,
     height: 640,
@@ -76,6 +83,7 @@ export const photos = {
   close: {
     src: img('photo-f15958584-960.jpg'),
     srcset: set('f15958584', ['500', '960', '1280']),
+    avif: set('f15958584', ['500', '960', '1280'], 'avif'),
     sizes: '(max-width: 639px) 140vw, (max-width: 1439px) 100vw, 1280px',
     width: 960,
     height: 722,

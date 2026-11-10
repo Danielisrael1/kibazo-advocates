@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react'
 import { action, hero } from '../content'
 import { photos } from '../photos'
 import Arrow from './Arrow'
+import Pic from './Pic'
 import { useSection } from '../kit'
 
 // The dealt photo hero: a full-bleed photograph, the words in a solid box on its calm side.
@@ -10,18 +11,12 @@ export default function Hero() {
   const p = photos.hero
   return (
     <section className="hero hero--photo" data-enter="" data-calm={p.calm} aria-labelledby="hero-h">
-      <img
+      <Pic
+        photo={p}
+        frame
         className="hero__bg"
-        src={p.src}
-        srcSet={p.srcset}
-        sizes={p.sizes}
-        width={p.width}
-        height={p.height}
-        alt={p.alt}
         style={{ '--ly-pos': p.pos, '--ly-pos-phone': p.posPhone } as CSSProperties}
         fetchPriority="high"
-        data-source="stand-in"
-        data-subject={p.subject}
       />
       <div className="wrap">
         <div className="hero-text">

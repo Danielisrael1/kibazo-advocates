@@ -2,6 +2,7 @@ import { action, closing, firm } from '../content'
 import { photos } from '../photos'
 import Arrow from './Arrow'
 import Logo from './Logo'
+import Pic from './Pic'
 import { useSection } from '../kit'
 
 // footer.closing: row 1 the dealt close (close-photo), row 2 the columns and the legal row.
@@ -20,19 +21,7 @@ export default function Closing() {
             <a className="btn btn--primary" href={action.href}>{action.label}<Arrow /></a>
           </div>
           <div className="close__media ph" data-rv="photo">
-            <img
-              className="ph__img"
-              src={p.src}
-              srcSet={p.srcset}
-              sizes={p.sizes}
-              width={p.width}
-              height={p.height}
-              alt={p.alt}
-              loading="lazy"
-              decoding="async"
-              data-source="stand-in"
-              data-subject={p.subject}
-            />
+            <Pic photo={p} className="ph__img" loading="lazy" decoding="async" />
           </div>
         </div>
         <div className="closing__links">
