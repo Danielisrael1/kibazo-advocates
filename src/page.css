@@ -94,12 +94,12 @@ picture.pic { display: contents; }
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--ink);
   transform: scaleX(0); transform-origin: right; transition: transform .6s var(--e-out);
 }
-.svc__no { grid-column: 1; font: 500 var(--t-label)/1 var(--font-text); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; color: var(--muted); }
+.svc__ph { grid-column: 1 / span 3; aspect-ratio: 4 / 3; }
 .svc__name {
-  grid-column: 2 / span 5; font: var(--display-weight) clamp(28px, 3.2vw, 46px)/1.08 var(--font-display);
+  grid-column: 4 / span 4; font: var(--display-weight) clamp(28px, 3.2vw, 46px)/1.08 var(--font-display);
   letter-spacing: var(--display-tracking); transition: translate .6s var(--e-out);
 }
-.svc__line { grid-column: 7 / span 5; max-width: 44ch; font-size: var(--t-lead); line-height: 1.5; }
+.svc__line { grid-column: 8 / span 4; max-width: 44ch; font-size: var(--t-lead); line-height: 1.5; }
 .svc__go {
   grid-column: 12; justify-self: end; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
   border: 1px solid var(--line-strong);
@@ -110,11 +110,18 @@ picture.pic { display: contents; }
 .svc__row:focus-visible::before { transform: scaleX(1); transform-origin: left; }
 .svc__row:focus-visible .svc__go { background: var(--action); border-color: var(--action); color: var(--action-ink); }
 @media (max-width: 1023px) {
-  .svc__row { grid-template-columns: 2.25em minmax(0, 1fr) 48px; column-gap: var(--s-3); row-gap: var(--s-2); align-items: start; }
-  .svc__no { grid-column: 1; grid-row: 1; padding-top: .95em; }
-  .svc__name { grid-column: 2; grid-row: 1; }
-  .svc__line { grid-column: 2; grid-row: 2; font-size: var(--t-body); }
+  .svc__row { grid-template-columns: 200px minmax(0, 1fr) 48px; column-gap: var(--s-5); row-gap: var(--s-2); align-items: center; }
+  .svc__ph { grid-column: 1; grid-row: 1 / span 2; }
+  .svc__name { grid-column: 2; grid-row: 1; align-self: end; }
+  .svc__line { grid-column: 2; grid-row: 2; align-self: start; font-size: var(--t-body); }
   .svc__go { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+}
+@media (max-width: 639px) {
+  .svc__row { grid-template-columns: minmax(0, 1fr) 48px; column-gap: var(--s-3); }
+  .svc__ph { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 16 / 10; margin-bottom: var(--s-3); }
+  .svc__name { grid-column: 1; grid-row: 2; align-self: center; }
+  .svc__go { grid-column: 2; grid-row: 2; }
+  .svc__line { grid-column: 1 / -1; grid-row: 3; }
 }
 
 /* ------------------------------------------------------------------ the three courts, named */
@@ -129,7 +136,11 @@ picture.pic { display: contents; }
 /* ------------------------------------------------------------------ questions: six answers, two columns */
 .q__head { display: grid; gap: var(--s-4); justify-items: start; }
 .q__head > p:first-of-type { font-size: var(--t-lead); line-height: 1.5; }
-.q__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--gutter); align-content: start; }
+.q__ph { width: 100%; aspect-ratio: 5 / 4; margin-top: var(--s-4); }
+/* the heading's words start level with the first answer's question, under the list's top rule */
+@media (min-width: 1024px) { .q__head { padding-top: var(--s-5); } }
+@media (max-width: 1023px) { .q__ph { aspect-ratio: 16 / 9; } }
+.q__list { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; }
 #questions .faq__item { position: relative; align-content: start; padding: var(--s-5) var(--s-5) var(--s-6) 0; border-bottom: 0; }
 #questions .faq__item::before, #questions .faq__item::after {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-strong); transform-origin: left;
@@ -137,7 +148,6 @@ picture.pic { display: contents; }
 #questions .faq__item::after { background: var(--ink); transform: scaleX(0); transform-origin: right; transition: transform .6s var(--e-out); }
 @media (max-width: 1023px) { .q__head { margin-bottom: var(--s-6); } }
 @media (max-width: 767px) {
-  .q__list { grid-template-columns: minmax(0, 1fr); }
   #questions .faq__item { padding-right: 0; }
 }
 
@@ -145,6 +155,12 @@ picture.pic { display: contents; }
 #book .grid { align-items: stretch; }
 .book__panel { background: var(--surface); padding: clamp(24px, 3.4vw, 48px); border-radius: var(--r-lg); }
 .book__where { margin-top: var(--s-6); }
+.book__reach { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); }
+.footer__office { font-style: normal; }
+/* on a phone the contacts and the office take the full row: the email address does not fit half of 320px */
+@media (max-width: 639px) { .footer .grid > .span-3.footer__col { grid-column: 1 / -1; } }
+/* under 360px "Book a consultation" needs the bar's full width: the phone stays in the booking panel and the footer */
+@media (max-width: 359px) { .actionbar .btn--secondary { display: none; } }
 .book__photo { min-height: 280px; }
 .field :is(input, select, textarea) { transition: border-color .15s ease, background-color .15s ease; }
 .field :is(input, select, textarea):hover { border-color: color-mix(in oklab, var(--ink) 55%, transparent); }
@@ -182,6 +198,7 @@ picture.pic { display: contents; }
   .svc__row:hover .svc__name { translate: 12px 0; }
   .svc__row:hover .svc__go { background: var(--action); border-color: var(--action); color: var(--action-ink); }
   .svc__row:hover .svc__go svg { translate: 3px 0; }
+  .svc__row:hover .ph__img { transform: scale(1.05); }
 
   #questions .faq__item:hover::after { transform: scaleX(1); transform-origin: left; }
 }

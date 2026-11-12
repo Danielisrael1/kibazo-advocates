@@ -1,11 +1,12 @@
-import { action, closing, firm } from '../content'
+import { action, book, closing, firm } from '../content'
 import { photos } from '../photos'
 import Arrow from './Arrow'
 import Logo from './Logo'
 import Pic from './Pic'
 import { useSection } from '../kit'
 
-// footer.closing: row 1 the dealt close (close-photo), row 2 the columns and the legal row.
+// footer.closing: row 1 the dealt close (close-photo), row 2 the firm, the page's words, its contacts
+// and its office, then the legal row.
 export default function Closing() {
   useSection('closing')
   const p = photos.close
@@ -30,16 +31,29 @@ export default function Closing() {
               <Logo />
               <p className="footer__lede">{closing.lede}</p>
             </div>
-            {closing.columns.map((col) => (
-              <div className="span-2 footer__col" key={col.head}>
-                <h3>{col.head}</h3>
-                <ul>
-                  {col.links.map((l) => (
-                    <li key={l.label}><a href={l.href}>{l.label}</a></li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="span-2 footer__col">
+              <h3>{closing.pages.head}</h3>
+              <ul>
+                {closing.pages.links.map((l) => (
+                  <li key={l.href}><a href={l.href}>{l.label}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div className="span-3 footer__col">
+              <h3>{closing.contactHead}</h3>
+              <ul>
+                <li><a href={firm.phoneHref}>{firm.phone}</a></li>
+                <li><a href={`mailto:${firm.email}`}>{firm.email}</a></li>
+              </ul>
+            </div>
+            <address className="span-3 footer__col footer__office">
+              <h3>{closing.officeHead}</h3>
+              <ul>
+                <li>{firm.address}</li>
+                <li>{firm.postal}</li>
+                <li><a href={firm.directions}>{book.directions}</a></li>
+              </ul>
+            </address>
           </div>
           <div className="footer__legal">
             <span>© {firm.year} {firm.name}</span>

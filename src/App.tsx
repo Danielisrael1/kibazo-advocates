@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { action } from './content'
+import { action, book, firm } from './content'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 
@@ -39,6 +39,7 @@ export default function App() {
       <Suspense fallback={null}><Closing /></Suspense>
       <nav className="actionbar" aria-label="Quick actions">
         <a className="btn btn--primary" href={action.href}>{action.label}</a>
+        <a className="btn btn--secondary" href={firm.phoneHref}>{book.call}</a>
       </nav>
     </>
   )

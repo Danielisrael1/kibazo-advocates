@@ -1,5 +1,6 @@
-// The six photographs (the hero, the three courts, the city by day and at dusk). Every one is a licensed stand-in from Wikimedia Commons (credits in the
-// footer line and /credits.html) until the firm supplies its own; the report lists each with the
+// The nine photographs: the hero, the three courts and the city at dusk from Wikimedia Commons; two
+// advocates in wig and gown and two Lagos office scenes from Pexels (Nigerian photographers). Every
+// one is a licensed stand-in (credits in the footer line and /credits.html) until the firm supplies its own; the report lists each with the
 // photograph to shoot in its place. Alt text is written new: the files' titles name other things.
 // Each is served as AVIF, with the JPEGs kept for a browser that cannot read one (scripts/images.mjs
 // makes both from the masters in photos-src/). `sizes` is generous on purpose: the frames crop with object-fit: cover, so a frame needs the
@@ -21,6 +22,8 @@ export type Photo = {
 const img = (file: string) => `/assets/img/${file}`
 const set = (id: string, widths: string[], ext = 'jpg') => widths.map((w) => `${img(`photo-${id}-${w}.${ext}`)} ${w}w`).join(', ')
 const HALF = '(max-width: 639px) 170vw, (max-width: 1023px) 120vw, 75vw'
+// a service row's picture: the full column on a phone, a thumbnail beside the words above it
+const ROW = '(max-width: 639px) 100vw, (max-width: 1023px) 200px, 25vw'
 
 export const photos = {
   hero: {
@@ -69,16 +72,50 @@ export const photos = {
     subject: 'court-of-appeal',
     pos: '50% 30%',
   },
+  // the people: stand-ins that show the work, never named or presented as the firm's own staff
+  court: {
+    src: img('photo-px37129340-960.jpg'),
+    srcset: set('px37129340', ['500', '960']),
+    avif: set('px37129340', ['500', '960'], 'avif'),
+    sizes: ROW,
+    width: 960,
+    height: 1200,
+    alt: "A woman in a barrister's wig, bands and gown, seated",
+    subject: 'barrister-seated',
+    pos: '55% 16%',
+  },
+  filing: {
+    src: img('photo-px30688591-960.jpg'),
+    srcset: set('px30688591', ['500', '960', '1280']),
+    avif: set('px30688591', ['500', '960', '1280'], 'avif'),
+    sizes: ROW,
+    width: 960,
+    height: 640,
+    alt: 'Two men talking across a desk with a laptop in an office',
+    subject: 'desk-meeting',
+    pos: '64% 36%',
+  },
   book: {
-    src: img('photo-f11082077-960.jpg'),
-    srcset: set('f11082077', ['500', '960', '1280']),
-    avif: set('f11082077', ['500', '960', '1280'], 'avif'),
+    src: img('photo-px30688592-960.jpg'),
+    srcset: set('px30688592', ['500', '960', '1280']),
+    avif: set('px30688592', ['500', '960', '1280'], 'avif'),
     sizes: HALF,
     width: 960,
     height: 640,
-    alt: "Kampala's city centre by day, the towers of Nakasero above the lower roofs",
-    subject: 'city-day',
-    pos: '50% 45%',
+    alt: 'Five people in a meeting around a white table in an office, seen from above',
+    subject: 'table-meeting',
+    pos: '55% 45%',
+  },
+  barrister: {
+    src: img('photo-px34850169-960.jpg'),
+    srcset: set('px34850169', ['500', '960']),
+    avif: set('px34850169', ['500', '960'], 'avif'),
+    sizes: '(max-width: 1023px) 100vw, 33vw',
+    width: 960,
+    height: 1200,
+    alt: 'A man in a barrister\'s wig, bands and gown, hands folded',
+    subject: 'barrister-standing',
+    pos: '50% 22%',
   },
   close: {
     src: img('photo-f15958584-960.jpg'),

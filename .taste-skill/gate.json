@@ -1,34 +1,36 @@
 {
- "start": "2026-11-10T14:09:53.409Z",
- "round": 2,
+ "start": "2026-11-11T12:34:26.382Z",
+ "round": 3,
  "idle": 0,
- "errors": 1,
- "status": "done",
+ "errors": 0,
+ "status": "open",
  "history": [
   {
-   "at": "2026-11-10T14:14:19.440Z",
+   "at": "2026-11-11T12:37:47.292Z",
    "mode": "manual",
    "status": "fail",
-   "fails": 53,
+   "fails": 50,
    "round": 1,
    "reused": false,
    "stopHookActive": false
   },
   {
-   "at": "2026-11-10T14:22:47.854Z",
+   "at": "2026-11-12T08:35:54.369Z",
    "mode": "manual",
    "status": "fail",
-   "fails": 41,
+   "fails": 55,
    "round": 2,
    "reused": false,
    "stopHookActive": false
   },
   {
-   "at": "2026-11-10T14:23:07.065Z",
-   "mode": "done",
-   "status": "done",
-   "reason": "user: escape the rules box and give me your best work as long as its not ai slop; the open findings are the kit's section-height, scroll-motion and caption rule",
-   "round": 2
+   "at": "2026-11-12T08:47:07.723Z",
+   "mode": "manual",
+   "status": "open",
+   "fails": 47,
+   "round": 3,
+   "reused": false,
+   "stopHookActive": false
   }
  ],
  "max": 3,
@@ -40,15 +42,15 @@
   "category": "advocates",
   "primary": "Book a consultation",
   "rounds": 3,
-  "start": "2026-11-10T14:09:53.409Z",
+  "start": "2026-11-11T12:34:26.382Z",
   "by": "gate.mjs --start"
  },
  "manual": true,
- "roundKey": "b2ad1109c2d77ed9:17ddf2ba",
+ "roundKey": "0152e5fdd731aed9:461df5a5",
  "roundFree": false,
  "idleFree": false,
  "blockKey": null,
- "fp": "b2ad1109c2d77ed9",
+ "fp": "0152e5fdd731aed9",
  "page": "dist/index.html",
  "found": {
   "fails": [
@@ -70,6 +72,23 @@
    },
    {
     "check": "scroll-linked",
+    "where": "a.svc__row > div.ph.svc__ph > picture.pic > img.ph__img \"img: A woman in a barrister's wig, bands\"",
+    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 1 more part of this section change with the scroll too (img.ph__img)",
+    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "scroll-linked"
+    ],
+    "wheres": [
+     "a.svc__row > div.ph.svc__ph > picture.pic > img.ph__img \"img: A woman in a barrister's wig, bands\""
+    ]
+   },
+   {
+    "check": "scroll-linked",
     "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\"",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 2 more parts of this section change with the scroll too (img.ph__img, img.ph__img)",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
@@ -87,7 +106,7 @@
    },
    {
     "check": "scroll-linked",
-    "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\"",
+    "where": "div.span-6.q__head > div.ph.q__ph > picture.pic > img.ph__img \"img: A man in a barrister's wig, bands a\"",
     "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
     "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
     "widths": [
@@ -99,7 +118,24 @@
      "scroll-linked"
     ],
     "wheres": [
-     "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\""
+     "div.span-6.q__head > div.ph.q__ph > picture.pic > img.ph__img \"img: A man in a barrister's wig, bands a\""
+    ]
+   },
+   {
+    "check": "scroll-linked",
+    "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Five people in a meeting around a w\"",
+    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
+    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "scroll-linked"
+    ],
+    "wheres": [
+     "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Five people in a meeting around a w\""
     ]
    },
    {
@@ -138,7 +174,7 @@
    },
    {
     "check": "scroll-reveal",
-    "where": "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"01 Court representation Appearing for cl\"",
+    "where": "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"Court representation Appearing for clien\"",
     "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
     "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
     "widths": [
@@ -150,12 +186,12 @@
      "scroll-reveal"
     ],
     "wheres": [
-     "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"01 Court representation Appearing for cl\""
+     "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"Court representation Appearing for clien\""
     ]
    },
    {
     "check": "scroll-reveal",
-    "where": "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"02 Trademark registration Searches, fili\"",
+    "where": "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"Trademark registration Searches, filings\"",
     "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
     "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
     "widths": [
@@ -167,7 +203,7 @@
      "scroll-reveal"
     ],
     "wheres": [
-     "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"02 Trademark registration Searches, fili\""
+     "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"Trademark registration Searches, filings\""
     ]
    },
    {
@@ -240,7 +276,7 @@
    },
    {
     "check": "scroll-reveal",
-    "where": "section#questions > div.wrap > div.grid.grid--top > div.span-4.q__head \"Questions What clients ask before a firs\"",
+    "where": "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions What clients ask before a firs\"",
     "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
     "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
     "widths": [
@@ -252,7 +288,7 @@
      "scroll-reveal"
     ],
     "wheres": [
-     "section#questions > div.wrap > div.grid.grid--top > div.span-4.q__head \"Questions What clients ask before a firs\""
+     "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions What clients ask before a firs\""
     ]
    },
    {
@@ -443,20 +479,20 @@
     ]
    },
    {
-    "check": "no-visual",
-    "where": "section#services \"Court and trademark services\"",
-    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "check": "card-family",
+    "where": "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions\"",
+    "msg": "4 cards of one kind (.span-6) set their titles in 2 faces: newsreader (1, like \"Questions\"), hanken grotesk (1, like \"How long does registrati\")",
+    "fix": "draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)",
     "widths": [
      1440,
      390
     ],
     "from": "consistency",
     "ids": [
-     "no-visual"
+     "card-family"
     ],
     "wheres": [
-     "section#services \"Court and trademark services\""
+     "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions\""
     ]
    },
    {
@@ -524,74 +560,46 @@
     ]
    },
    {
+    "check": "phone-number",
+    "where": "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"tel:+256700901610\"",
+    "msg": "a tel: link calls a number in a real dialable format: \"tel:+256700901610\"; a visitor can dial it and reach a stranger (and 2 more like it: div.span-3.footer__col > ul > li:nth-of-type(1) > a, nav.actionbar > a.btn.btn--secondary)",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "phone-number"
+    ],
+    "wheres": [
+     "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"tel:+256700901610\""
+    ]
+   },
+   {
     "check": "section-height",
     "where": "section#about \"The firmKibazo Associated Advocates has \"",
     "msg": "the scene's section is 370px tall (0.4 screens), 530px short of one screen (900px): every section after the hero is one screen or two, 2px either way; a pinned scene is (hold + 1) screens tall, so write data-big-scene-opts='{\"hold\": 1}' (two screens) and keep --h on the section (SR-2)",
     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
     "widths": [
-     1440
+     1440,
+     390
     ],
     "from": "consistency",
     "ids": [
-     "section-height"
+     "section-height",
+     "screen-short",
+     "screen-height"
     ],
     "wheres": [
-     "section#about \"The firmKibazo Associated Advocates has \""
-    ]
-   },
-   {
-    "check": "section-height",
-    "where": "section#services \"Court and trademark servicesSee the ques\"",
-    "msg": "the section is 514px tall (0.6 screens), 386px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
-    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "section-height"
-    ],
-    "wheres": [
-     "section#services \"Court and trademark servicesSee the ques\""
-    ]
-   },
-   {
-    "check": "section-height",
-    "where": "section#questions \"QuestionsWhat clients ask before a first\"",
-    "msg": "the section is 594px tall (0.7 screens), 306px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"Book a consultationWrite\", \"The courts and the regis\", \"A first meeting on Bugan\") (SR-2)",
-    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "section-height"
-    ],
-    "wheres": [
-     "section#questions \"QuestionsWhat clients ask before a first\""
-    ]
-   },
-   {
-    "check": "section-height",
-    "where": "section#book \"Book a consultationWrite what the matter\"",
-    "msg": "the section starts at 3201px, 399px above the screen grid (4 x 900px): sections start on whole screens (SR-2)",
-    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "section-height"
-    ],
-    "wheres": [
-     "section#book \"Book a consultationWrite what the matter\""
+     "section#about \"The firmKibazo Associated Advocates has \"",
+     "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
     ]
    },
    {
     "check": "section-height",
     "where": "footer#contact \"A first meeting on Buganda RoadCourt mat\"",
-    "msg": "the section starts at 3961px, 361px below the screen grid (4 x 900px): sections start on whole screens (and 2 more like it: \"QuestionsWhat clients as\", \"The courts and the regis\") (SR-2)",
-    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "msg": "the section is 1039px tall (1.2 screens), 139px over one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
     "widths": [
      1440
     ],
@@ -604,25 +612,68 @@
     ]
    },
    {
-    "check": "one-section",
-    "where": "h2#book-h \"Book a consultation\"",
-    "msg": "the screen at scroll 2700px (stride 3) shows 399px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
-    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "check": "section-height",
+    "where": "section#book \"Book a consultationWrite what the matter\"",
+    "msg": "the section is 798px tall (0.9 screens), 102px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"The courts and the regis\", \"Court and trademark serv\", \"QuestionsWhat clients as\") (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#book \"Book a consultationWrite what the matter\"",
+     "#book section.section \"Book a consultationWrite what th\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#services \"Court and trademark servicesSee the ques\"",
+    "msg": "the section starts at 1270px, 370px below the screen grid (1 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
     "widths": [
      1440
     ],
     "from": "consistency",
     "ids": [
-     "one-section"
+     "section-height",
+     "screen-short",
+     "screen-height"
     ],
     "wheres": [
-     "h2#book-h \"Book a consultation\""
+     "section#services \"Court and trademark servicesSee the ques\"",
+     "#services section.section \"Court and trademark servicesSee \""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#courts \"The courts and the registryThe High Cour\"",
+    "msg": "the section starts at 2128px, 328px below the screen grid (2 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#courts \"The courts and the registryThe High Cour\"",
+     "#courts section.section \"The courts and the registryThe H\""
     ]
    },
    {
     "check": "one-section",
-    "where": "h2#courts-h \"The courts and the registry\"",
-    "msg": "the screen at scroll 1270px (the top of section 3) shows 386px of section 4 and the heading of section 4 whole and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "where": "section#services \"Court and trademark servicesSee the ques\"",
+    "msg": "the screen at scroll 1800px (stride 2) shows 256px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
     "widths": [
      1440
@@ -632,13 +683,45 @@
      "one-section"
     ],
     "wheres": [
-     "h2#courts-h \"The courts and the registry\""
+     "section#services \"Court and trademark servicesSee the ques\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#questions \"QuestionsWhat clients ask before a first\"",
+    "msg": "the screen at scroll 3600px (stride 4) shows 198px of section 5 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#questions \"QuestionsWhat clients ask before a first\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#courts \"The courts and the registryThe High Cour\"",
+    "msg": "the screen at scroll 2700px (stride 3) shows 179px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 5 more like it: scroll 3870px, scroll 4500px, scroll 2128px) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#courts \"The courts and the registryThe High Cour\""
     ]
    },
    {
     "check": "one-heading",
     "where": "h2#services-h \"Court and trademark services\"",
-    "msg": "headings of two sections show whole on one screen at 25 of 81 scroll positions (30.9%; at scroll 500, 550, 600, 650px), here with \"Kibazo\": at most 3% on a desktop (SR-5)",
+    "msg": "headings of two sections show whole on one screen at 20 of 97 scroll positions (20.6%; at scroll 500, 550, 600, 650px), here with \"Kibazo\": at most 3% on a desktop (SR-5)",
     "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
     "widths": [
      1440
@@ -649,54 +732,6 @@
     ],
     "wheres": [
      "h2#services-h \"Court and trademark services\""
-    ]
-   },
-   {
-    "check": "container-edges",
-    "where": "div.grid.grid--top > div.faq.q__list > div.faq__item:nth-of-type(1) > h3 \"How long does registration last?\"",
-    "msg": "6 text blocks start on a left line at x 515, 435px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also \"Seven years from the filing date\", \"Can a foreign business file in U\", \"Yes. A foreign applicant files t\") (SR-6)",
-    "fix": "start the text on the container's left, or on the one split line every split shares",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "container-edges"
-    ],
-    "wheres": [
-     "div.grid.grid--top > div.faq.q__list > div.faq__item:nth-of-type(1) > h3 \"How long does registration last?\""
-    ]
-   },
-   {
-    "check": "row-lines",
-    "where": "section#questions > div.wrap > div.grid.grid--top > div.faq.q__list \"How long does registration last?Seven ye\"",
-    "msg": "a row of 2 items: its first item starts at 515px, the container's left line at 80px (2px either way) (SR-7)",
-    "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "row-lines"
-    ],
-    "wheres": [
-     "section#questions > div.wrap > div.grid.grid--top > div.faq.q__list \"How long does registration last?Seven ye\""
-    ]
-   },
-   {
-    "check": "split-pair",
-    "where": "section#questions > div.wrap > div.grid.grid--top \"QuestionsWhat clients ask before a first\"",
-    "msg": "the two columns of the split start 23px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
-    "fix": "top-align both columns of the split (align-items: start)",
-    "widths": [
-     1440
-    ],
-    "from": "consistency",
-    "ids": [
-     "split-pair"
-    ],
-    "wheres": [
-     "section#questions > div.wrap > div.grid.grid--top \"QuestionsWhat clients ask before a first\""
     ]
    },
    {
@@ -716,19 +751,133 @@
     ]
    },
    {
-    "check": "section-tile",
-    "where": "section#courts \"The courts and the registry\"",
-    "msg": "the section is 690px tall (0.82 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 634px of it and 154px of the next section, its heading \"Questions\" on screen",
-    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "check": "phone-number",
+    "where": "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"0700901610\"",
+    "msg": "a phone number after its label: \"0700901610\"; a visitor can dial it and reach a stranger",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
     "widths": [
      390
     ],
     "from": "consistency",
     "ids": [
-     "section-tile"
+     "phone-number"
     ],
     "wheres": [
-     "section#courts \"The courts and the registry\""
+     "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"0700901610\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\"",
+    "msg": "framed, 307px of #services section.section \"Court and trademark servicesSee \" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
+    ]
+   },
+   {
+    "check": "screen-height",
+    "where": "#questions section.section \"QuestionsWhat clients ask before\"",
+    "msg": "919px, 1.02 screens; a section is exactly one or two (--h)",
+    "fix": "make the section exactly one or two screens (--h: 1 or 2)",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-height"
+    ],
+    "wheres": [
+     "#questions section.section \"QuestionsWhat clients ask before\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#book section.section \"Book a consultationWrite what th\"",
+    "msg": "framed, 102px of the footer shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#book section.section \"Book a consultationWrite what th\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+    "msg": "796px tall; one screen under the nav is 844px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short"
+    ],
+    "wheres": [
+     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
+    ]
+   },
+   {
+    "check": "neighbour-ground",
+    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+    "msg": "framed, 48px of #about section.section.ground-inverse \"The firmKibazo Associated Advoca\"'s ground shows",
+    "fix": "end the ground with the section",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour-ground"
+    ],
+    "wheres": [
+     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
+    ]
+   },
+   {
+    "check": "sparse",
+    "where": "#book section.section \"Book a consultationWrite what th\"",
+    "msg": "its content fills 20% of its screen; merge it or give it its visual (0.55 is the aim)",
+    "fix": "fill the section or make it a screen shorter",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "sparse"
+    ],
+    "wheres": [
+     "#book section.section \"Book a consultationWrite what th\""
+    ]
+   },
+   {
+    "check": "hero-fold",
+    "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+    "msg": "ends at y 796, above the fold (844)",
+    "fix": "the hero fills the first screen alone, its button inside it",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-fold"
+    ],
+    "wheres": [
+     "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
     ]
    }
   ],
@@ -745,41 +894,30 @@
     "from": "consistency"
    },
    {
-    "check": "text-only",
-    "where": "section#questions \"Questions\"",
-    "msg": "the section is only text: no picture, icon, mock or effect in it",
-    "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+    "check": "no-visual",
+    "where": "section#services \"Court and trademark services\"",
+    "msg": "pictures, effects and mocks cover 15% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
     "widths": [
-     1440,
-     390
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"photo-f62324217-1280.avif\"",
+    "msg": "8 photographs in more than one look: lightness from 0.18 to 0.69; warm and cool photographs mixed (b* -13 to +8); the odd one out is photo-f62324217-1280.avif",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     1440
     ],
     "from": "consistency"
    },
    {
     "check": "photo-credit",
     "where": "(the page text)",
-    "msg": "1 library source (wikimedia): the page credits wikimedia; confirm each shows the client's own product, place or people",
+    "msg": "2 library sources (wikimedia, pexels): the page credits wikimedia, the page credits pexels; confirm each shows the client's own product, place or people",
     "fix": "confirm the library photograph shows the client's own product, place or people; otherwise replace it",
-    "widths": [
-     1440
-    ],
-    "from": "consistency"
-   },
-   {
-    "check": "one-screen",
-    "where": "section#services \"Court and trademark services\"",
-    "msg": "2 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Court and trademark services\" is 514px of the 828px under the nav, and \"The courts and the registry\" shows below it (\"Questions\")",
-    "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
-    "widths": [
-     1440
-    ],
-    "from": "consistency"
-   },
-   {
-    "check": "section-tile",
-    "where": "section#courts \"The courts and the registry\"",
-    "msg": "the section is 823px tall (0.91 screens at 1440x900), shorter than the screen: its tile (the screen from its top) shows 751px of it and only 77px of the next section's ground (\"Questions\"), none of its content",
-    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
     "widths": [
      1440
     ],
@@ -790,16 +928,6 @@
     "where": "header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"book a consultation\"",
     "msg": "\"book a consultation\" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it",
     "fix": "show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once",
-    "widths": [
-     1440
-    ],
-    "from": "consistency"
-   },
-   {
-    "check": "form-send",
-    "where": "div.wrap > div.grid.grid--top:nth-of-type(2) > div.span-6.book__panel:nth-of-type(1) > form.form \"mailto:office@kibazo.example\"",
-    "msg": "the form opens a mail to office@kibazo.example: a stand-in until the client gives its form address; list it in the report",
-    "fix": "send the form to the client's address (data-endpoint) and show the confirmation only after it answers; list a mailto stand-in in the report",
     "widths": [
      1440
     ],
@@ -818,7 +946,7 @@
    {
     "check": "no-visual",
     "where": "section#book \"Book a consultation\"",
-    "msg": "pictures, effects and mocks cover 22% of this section; a feature section needs a visual (about 25% or more)",
+    "msg": "pictures, effects and mocks cover 19% of this section; a feature section needs a visual (about 25% or more)",
     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
     "widths": [
      390
@@ -828,7 +956,7 @@
    {
     "check": "photo-set",
     "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"photo-f62324217-960.avif\"",
-    "msg": "6 photographs in more than one look: warm and cool photographs mixed (b* -13 to +8); the odd one out is photo-f62324217-960.avif",
+    "msg": "9 photographs in more than one look: lightness from 0.22 to 0.68; warm and cool photographs mixed (b* -13 to +9); the odd one out is photo-f62324217-960.avif",
     "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
     "widths": [
      390
@@ -846,12 +974,10 @@
     "from": "consistency"
    }
   ],
-  "crashed": [
-   "check.mjs could not run (exit 2: check: Chrome did not start)"
-  ],
+  "crashed": [],
   "seconds": {
-   "consistency": 231,
-   "layout": 18
+   "consistency": 220,
+   "layout": 21
   }
  },
  "open": [
@@ -873,6 +999,23 @@
   },
   {
    "check": "scroll-linked",
+   "where": "a.svc__row > div.ph.svc__ph > picture.pic > img.ph__img \"img: A woman in a barrister's wig, bands\"",
+   "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 1 more part of this section change with the scroll too (img.ph__img)",
+   "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "scroll-linked"
+   ],
+   "wheres": [
+    "a.svc__row > div.ph.svc__ph > picture.pic > img.ph__img \"img: A woman in a barrister's wig, bands\""
+   ]
+  },
+  {
+   "check": "scroll-linked",
    "where": "div.courts > figure.ph.court:nth-of-type(1) > picture.pic > img.ph__img \"img: The High Court of Uganda's building\"",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view()); 2 more parts of this section change with the scroll too (img.ph__img, img.ph__img)",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
@@ -890,7 +1033,7 @@
   },
   {
    "check": "scroll-linked",
-   "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\"",
+   "where": "div.span-6.q__head > div.ph.q__ph > picture.pic > img.ph__img \"img: A man in a barrister's wig, bands a\"",
    "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
    "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
    "widths": [
@@ -902,7 +1045,24 @@
     "scroll-linked"
    ],
    "wheres": [
-    "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Kampala's city centre by day, the t\""
+    "div.span-6.q__head > div.ph.q__ph > picture.pic > img.ph__img \"img: A man in a barrister's wig, bands a\""
+   ]
+  },
+  {
+   "check": "scroll-linked",
+   "where": "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Five people in a meeting around a w\"",
+   "msg": "moves with the scroll on a CSS scroll timeline (animation-timeline: view())",
+   "fix": "remove the scroll-driven motion; motion lives inside a visual as a small loop",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "scroll-linked"
+   ],
+   "wheres": [
+    "div.grid.grid--top > div.ph.span-6 > picture.pic > img.ph__img \"img: Five people in a meeting around a w\""
    ]
   },
   {
@@ -941,7 +1101,7 @@
   },
   {
    "check": "scroll-reveal",
-   "where": "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"01 Court representation Appearing for cl\"",
+   "where": "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"Court representation Appearing for clien\"",
    "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
    "widths": [
@@ -953,12 +1113,12 @@
     "scroll-reveal"
    ],
    "wheres": [
-    "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"01 Court representation Appearing for cl\""
+    "section#services > div.wrap > ol.svc > li:nth-of-type(1) \"Court representation Appearing for clien\""
    ]
   },
   {
    "check": "scroll-reveal",
-   "where": "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"02 Trademark registration Searches, fili\"",
+   "where": "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"Trademark registration Searches, filings\"",
    "msg": "starts \"transform\" (1.1 s) the moment it is scrolled into view (an IntersectionObserver)",
    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
    "widths": [
@@ -970,7 +1130,7 @@
     "scroll-reveal"
    ],
    "wheres": [
-    "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"02 Trademark registration Searches, fili\""
+    "section#services > div.wrap > ol.svc > li:nth-of-type(2) \"Trademark registration Searches, filings\""
    ]
   },
   {
@@ -1043,7 +1203,7 @@
   },
   {
    "check": "scroll-reveal",
-   "where": "section#questions > div.wrap > div.grid.grid--top > div.span-4.q__head \"Questions What clients ask before a firs\"",
+   "where": "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions What clients ask before a firs\"",
    "msg": "starts \"opacity\" (0.8 s) the moment it is scrolled into view (an IntersectionObserver)",
    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
    "widths": [
@@ -1055,7 +1215,7 @@
     "scroll-reveal"
    ],
    "wheres": [
-    "section#questions > div.wrap > div.grid.grid--top > div.span-4.q__head \"Questions What clients ask before a firs\""
+    "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions What clients ask before a firs\""
    ]
   },
   {
@@ -1246,20 +1406,20 @@
    ]
   },
   {
-   "check": "no-visual",
-   "where": "section#services \"Court and trademark services\"",
-   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "check": "card-family",
+   "where": "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions\"",
+   "msg": "4 cards of one kind (.span-6) set their titles in 2 faces: newsreader (1, like \"Questions\"), hanken grotesk (1, like \"How long does registrati\")",
+   "fix": "draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)",
    "widths": [
     1440,
     390
    ],
    "from": "consistency",
    "ids": [
-    "no-visual"
+    "card-family"
    ],
    "wheres": [
-    "section#services \"Court and trademark services\""
+    "section#questions > div.wrap > div.grid.grid--top > div.span-6.q__head \"Questions\""
    ]
   },
   {
@@ -1332,69 +1492,25 @@
    "msg": "the scene's section is 370px tall (0.4 screens), 530px short of one screen (900px): every section after the hero is one screen or two, 2px either way; a pinned scene is (hold + 1) screens tall, so write data-big-scene-opts='{\"hold\": 1}' (two screens) and keep --h on the section (SR-2)",
    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
    "widths": [
-    1440
+    1440,
+    390
    ],
    "from": "consistency",
    "ids": [
-    "section-height"
+    "section-height",
+    "screen-short",
+    "screen-height"
    ],
    "wheres": [
-    "section#about \"The firmKibazo Associated Advocates has \""
-   ]
-  },
-  {
-   "check": "section-height",
-   "where": "section#services \"Court and trademark servicesSee the ques\"",
-   "msg": "the section is 514px tall (0.6 screens), 386px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
-   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "section-height"
-   ],
-   "wheres": [
-    "section#services \"Court and trademark servicesSee the ques\""
-   ]
-  },
-  {
-   "check": "section-height",
-   "where": "section#questions \"QuestionsWhat clients ask before a first\"",
-   "msg": "the section is 594px tall (0.7 screens), 306px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"Book a consultationWrite\", \"The courts and the regis\", \"A first meeting on Bugan\") (SR-2)",
-   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "section-height"
-   ],
-   "wheres": [
-    "section#questions \"QuestionsWhat clients ask before a first\""
-   ]
-  },
-  {
-   "check": "section-height",
-   "where": "section#book \"Book a consultationWrite what the matter\"",
-   "msg": "the section starts at 3201px, 399px above the screen grid (4 x 900px): sections start on whole screens (SR-2)",
-   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "section-height"
-   ],
-   "wheres": [
-    "section#book \"Book a consultationWrite what the matter\""
+    "section#about \"The firmKibazo Associated Advocates has \"",
+    "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
    ]
   },
   {
    "check": "section-height",
    "where": "footer#contact \"A first meeting on Buganda RoadCourt mat\"",
-   "msg": "the section starts at 3961px, 361px below the screen grid (4 x 900px): sections start on whole screens (and 2 more like it: \"QuestionsWhat clients as\", \"The courts and the regis\") (SR-2)",
-   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "msg": "the section is 1039px tall (1.2 screens), 139px over one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
    "widths": [
     1440
    ],
@@ -1407,25 +1523,68 @@
    ]
   },
   {
-   "check": "one-section",
-   "where": "h2#book-h \"Book a consultation\"",
-   "msg": "the screen at scroll 2700px (stride 3) shows 399px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
-   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "check": "section-height",
+   "where": "section#book \"Book a consultationWrite what the matter\"",
+   "msg": "the section is 798px tall (0.9 screens), 102px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"The courts and the regis\", \"Court and trademark serv\", \"QuestionsWhat clients as\") (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#book \"Book a consultationWrite what the matter\"",
+    "#book section.section \"Book a consultationWrite what th\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#services \"Court and trademark servicesSee the ques\"",
+   "msg": "the section starts at 1270px, 370px below the screen grid (1 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
    "widths": [
     1440
    ],
    "from": "consistency",
    "ids": [
-    "one-section"
+    "section-height",
+    "screen-short",
+    "screen-height"
    ],
    "wheres": [
-    "h2#book-h \"Book a consultation\""
+    "section#services \"Court and trademark servicesSee the ques\"",
+    "#services section.section \"Court and trademark servicesSee \""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#courts \"The courts and the registryThe High Cour\"",
+   "msg": "the section starts at 2128px, 328px below the screen grid (2 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#courts \"The courts and the registryThe High Cour\"",
+    "#courts section.section \"The courts and the registryThe H\""
    ]
   },
   {
    "check": "one-section",
-   "where": "h2#courts-h \"The courts and the registry\"",
-   "msg": "the screen at scroll 1270px (the top of section 3) shows 386px of section 4 and the heading of section 4 whole and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "where": "section#services \"Court and trademark servicesSee the ques\"",
+   "msg": "the screen at scroll 1800px (stride 2) shows 256px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
    "widths": [
     1440
@@ -1435,13 +1594,45 @@
     "one-section"
    ],
    "wheres": [
-    "h2#courts-h \"The courts and the registry\""
+    "section#services \"Court and trademark servicesSee the ques\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#questions \"QuestionsWhat clients ask before a first\"",
+   "msg": "the screen at scroll 3600px (stride 4) shows 198px of section 5 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#questions \"QuestionsWhat clients ask before a first\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#courts \"The courts and the registryThe High Cour\"",
+   "msg": "the screen at scroll 2700px (stride 3) shows 179px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 5 more like it: scroll 3870px, scroll 4500px, scroll 2128px) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#courts \"The courts and the registryThe High Cour\""
    ]
   },
   {
    "check": "one-heading",
    "where": "h2#services-h \"Court and trademark services\"",
-   "msg": "headings of two sections show whole on one screen at 25 of 81 scroll positions (30.9%; at scroll 500, 550, 600, 650px), here with \"Kibazo\": at most 3% on a desktop (SR-5)",
+   "msg": "headings of two sections show whole on one screen at 20 of 97 scroll positions (20.6%; at scroll 500, 550, 600, 650px), here with \"Kibazo\": at most 3% on a desktop (SR-5)",
    "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
    "widths": [
     1440
@@ -1452,54 +1643,6 @@
    ],
    "wheres": [
     "h2#services-h \"Court and trademark services\""
-   ]
-  },
-  {
-   "check": "container-edges",
-   "where": "div.grid.grid--top > div.faq.q__list > div.faq__item:nth-of-type(1) > h3 \"How long does registration last?\"",
-   "msg": "6 text blocks start on a left line at x 515, 435px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also \"Seven years from the filing date\", \"Can a foreign business file in U\", \"Yes. A foreign applicant files t\") (SR-6)",
-   "fix": "start the text on the container's left, or on the one split line every split shares",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "container-edges"
-   ],
-   "wheres": [
-    "div.grid.grid--top > div.faq.q__list > div.faq__item:nth-of-type(1) > h3 \"How long does registration last?\""
-   ]
-  },
-  {
-   "check": "row-lines",
-   "where": "section#questions > div.wrap > div.grid.grid--top > div.faq.q__list \"How long does registration last?Seven ye\"",
-   "msg": "a row of 2 items: its first item starts at 515px, the container's left line at 80px (2px either way) (SR-7)",
-   "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "row-lines"
-   ],
-   "wheres": [
-    "section#questions > div.wrap > div.grid.grid--top > div.faq.q__list \"How long does registration last?Seven ye\""
-   ]
-  },
-  {
-   "check": "split-pair",
-   "where": "section#questions > div.wrap > div.grid.grid--top \"QuestionsWhat clients ask before a first\"",
-   "msg": "the two columns of the split start 23px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
-   "fix": "top-align both columns of the split (align-items: start)",
-   "widths": [
-    1440
-   ],
-   "from": "consistency",
-   "ids": [
-    "split-pair"
-   ],
-   "wheres": [
-    "section#questions > div.wrap > div.grid.grid--top \"QuestionsWhat clients ask before a first\""
    ]
   },
   {
@@ -1519,24 +1662,157 @@
    ]
   },
   {
-   "check": "section-tile",
-   "where": "section#courts \"The courts and the registry\"",
-   "msg": "the section is 690px tall (0.82 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 634px of it and 154px of the next section, its heading \"Questions\" on screen",
-   "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+   "check": "neighbour",
+   "where": "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\"",
+   "msg": "framed, 307px of #services section.section \"Court and trademark servicesSee \" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#about section.section.ground-inverse \"The firmKibazo Associated Advoca\""
+   ]
+  },
+  {
+   "check": "screen-height",
+   "where": "#questions section.section \"QuestionsWhat clients ask before\"",
+   "msg": "919px, 1.02 screens; a section is exactly one or two (--h)",
+   "fix": "make the section exactly one or two screens (--h: 1 or 2)",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-height"
+   ],
+   "wheres": [
+    "#questions section.section \"QuestionsWhat clients ask before\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#book section.section \"Book a consultationWrite what th\"",
+   "msg": "framed, 102px of the footer shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#book section.section \"Book a consultationWrite what th\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+   "msg": "796px tall; one screen under the nav is 844px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short"
+   ],
+   "wheres": [
+    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
+   ]
+  },
+  {
+   "check": "neighbour-ground",
+   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+   "msg": "framed, 48px of #about section.section.ground-inverse \"The firmKibazo Associated Advoca\"'s ground shows",
+   "fix": "end the ground with the section",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour-ground"
+   ],
+   "wheres": [
+    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
+   ]
+  },
+  {
+   "check": "sparse",
+   "where": "#book section.section \"Book a consultationWrite what th\"",
+   "msg": "its content fills 20% of its screen; merge it or give it its visual (0.55 is the aim)",
+   "fix": "fill the section or make it a screen shorter",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "sparse"
+   ],
+   "wheres": [
+    "#book section.section \"Book a consultationWrite what th\""
+   ]
+  },
+  {
+   "check": "hero-fold",
+   "where": "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\"",
+   "msg": "ends at y 796, above the fold (844)",
+   "fix": "the hero fills the first screen alone, its button inside it",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-fold"
+   ],
+   "wheres": [
+    "section.hero.hero--photo section.hero.hero--photo \"Advocates in KampalaCourt repres\""
+   ]
+  }
+ ],
+ "waived": [
+  {
+   "check": "phone-number",
+   "where": "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"tel:+256700901610\"",
+   "msg": "a tel: link calls a number in a real dialable format: \"tel:+256700901610\"; a visitor can dial it and reach a stranger (and 2 more like it: div.span-3.footer__col > ul > li:nth-of-type(1) > a, nav.actionbar > a.btn.btn--secondary)",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "phone-number"
+   ],
+   "wheres": [
+    "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"tel:+256700901610\""
+   ],
+   "reason": "the firm's own phone number, supplied by the user on 2026-11-11 (Kibazo Associated Advocates, 0700901610); copy.md prints a number the brief gives exactly as given"
+  },
+  {
+   "check": "phone-number",
+   "where": "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"0700901610\"",
+   "msg": "a phone number after its label: \"0700901610\"; a visitor can dial it and reach a stranger",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
    "widths": [
     390
    ],
    "from": "consistency",
    "ids": [
-    "section-tile"
+    "phone-number"
    ],
    "wheres": [
-    "section#courts \"The courts and the registry\""
-   ]
+    "div.span-6.book__panel > div.stack-4.book__where > p.book__reach > a.link:nth-of-type(1) \"0700901610\""
+   ],
+   "reason": "the same supplied number printed as the visible link text in the booking panel; it is the firm's real contact, not an invented one"
   }
  ],
- "waived": [],
- "warnCount": 11,
- "at": "2026-11-10T14:23:07.081Z",
- "doneReason": "user: escape the rules box and give me your best work as long as its not ai slop; the open findings are the kit's section-height, scroll-motion and caption rules the user set aside"
+ "warnCount": 9,
+ "at": "2026-11-12T08:47:07.734Z",
+ "openTold": true
 }

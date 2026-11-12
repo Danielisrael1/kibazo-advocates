@@ -1,9 +1,14 @@
 import type { CSSProperties } from 'react'
 import { action, services } from '../content'
+import { photos } from '../photos'
+import Photo from './Photo'
 import { useSection } from '../kit'
 
-// The two kinds of work as full-width ruled rows. Each row is a link to the booking form;
-// motion.ts writes the row's name into the form's "The matter" field on the way.
+// each row's picture, in the order of services.rows
+const PICS = [photos.court, photos.filing]
+
+// The two kinds of work as full-width ruled rows, each with its photograph. Each row is a link to
+// the booking form; motion.ts writes the row's name into the form's "The matter" field on the way.
 export default function Services() {
   useSection('services')
   return (
@@ -17,7 +22,7 @@ export default function Services() {
           {services.rows.map((row, i) => (
             <li key={row.name} data-rv="row" style={{ '--rv-d': `${i * 120}ms` } as CSSProperties}>
               <a className="svc__row" href={action.href} data-matter={row.name}>
-                <span className="svc__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <Photo photo={PICS[i]} className="svc__ph" delay={i * 120} />
                 <span className="svc__name">{row.name}</span>
                 <span className="svc__line">{row.line}</span>
                 <span className="svc__go">

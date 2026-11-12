@@ -33,23 +33,39 @@ buttons, nav and form; `src/page.css` sets the page's own layout and motion on t
 
 ## Before this goes live
 
-1. **Photographs.** All six are licensed stand-ins from Wikimedia Commons (the courts, the city).
-   Replace them with the firm's own: put the master in `photos-src/` as `photo-<id>.jpg`, add a
-   JPEG for each width the page should offer to `public/assets/img/` (`photo-<id>-500.jpg`, `-960`,
-   `-1280`; any resize will do, the script rewrites them), run `npm run images`, and update
-   `src/photos.ts` (keep `width`/`height` honest). Then either regenerate
-   `credits.html` or, once every picture is the firm's own, delete the credits line in `Closing.tsx`.
-2. **The form.** `firm.formAction` in `src/content.ts` is a `mailto:` on a `.example` address.
-   Point it at the firm's email, or set `data-endpoint` on the form to a form service's URL
-   (the kit then posts there and shows the sent line).
+1. **Photographs.** All nine are licensed stand-ins: the hero, the three courts and the dusk skyline
+   from Wikimedia Commons; two advocates in wig and gown (Kano and a Nigerian studio) and two Lagos
+   office scenes from Pexels. The people are never named or presented as the firm's staff; replace
+   them with the firm's own photographs first. To swap one: put the master in `photos-src/` as
+   `photo-<id>.jpg`, add a JPEG for each width the page should offer to `public/assets/img/`
+   (`photo-<id>-500.jpg`, `-960`, `-1280`; any resize will do, the script rewrites them), run
+   `npm run images`, and update `src/photos.ts` (keep `width`/`height` honest). Then update
+   `public/credits.html`, or, once every picture is the firm's own, delete the credits line in `Closing.tsx`.
+2. **The form** opens a mail to `Kibazo.nasser@gmail.com` (`firm.formAction` in `src/content.ts`).
+   To send without the visitor's mail client, set `data-endpoint` on the form to a form service's
+   URL (the kit then posts there and shows the sent line).
 3. **Practice areas.** The page states only what the public record supports: court representation
    and trademark registration (URSB-registered agent). Add the firm's other practice areas to
    `services.rows` in `src/content.ts` once the firm confirms them.
-4. **Contact details.** No phone or email is printed (the kit's rule until the firm supplies them).
-   Add them to the booking panel in `Book.tsx` when confirmed.
-5. **Domain.** Uncomment the canonical link in `index.html` and set the `og:image` to an absolute URL.
+4. **Contact details** (phone, email, P.O. Box, street) live in `firm` in `src/content.ts`. They
+   print in the booking panel and the footer, the phone is the second button of the phone bar, and
+   the structured data reads them from the same place.
+5. **Domain.** Build with it: `SITE_URL=https://the-domain.ug npm run build` writes the canonical
+   link, `og:url`, absolute share-image URLs, `sitemap.xml` and the sitemap line in `robots.txt`.
 6. **Logo.** The ring mark beside the name is the kit's placeholder. Replace the `<span class="mark">`
    in `src/components/Logo.tsx` with the firm's SVG.
+
+## Search
+
+- Every section is in the HTML the build ships (`scripts/prerender.mjs`, `progressiveChunkSize`
+  in `src/entry-server.tsx`): a crawler without JavaScript reads the whole page, in order.
+- `src/seo.ts` builds the JSON-LD from `content.ts`: a `LegalService` (name, street, P.O. Box,
+  phone, email, the two services, Uganda as the area served) and a `FAQPage` for the six questions.
+  It states only what the page states: no hours, prices, ratings or coordinates.
+- Title, description and share tags are in `index.html`; the share image is `public/share.jpg`
+  (1200x630). The credits page is `noindex`.
+- After launch: submit `sitemap.xml` in Google Search Console, and put the site's address on the
+  firm's Google Business Profile, with the same name, address and phone as the page.
 
 ## Motion
 
@@ -68,6 +84,6 @@ buttons, nav and form; `src/page.css` sets the page's own layout and motion on t
 
 The layout deliberately leaves the kit's rule of one section per screen (it left most screens half
 empty) and adds scroll reveals, so the kit's `gate.mjs` and `consistency.mjs` now report
-section-height and scroll-reveal findings by design. `.taste-skill/report.md` describes the page
-before that change. Shoot with `--reduced`: a stitched full-page shot otherwise catches parts
+section-height and scroll-reveal findings by design. `.taste-skill/report.md` lists what the last
+gate left open and why. Shoot with `--reduced`: a stitched full-page shot otherwise catches parts
 mid-reveal.

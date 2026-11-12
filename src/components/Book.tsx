@@ -3,9 +3,9 @@ import { photos } from '../photos'
 import Photo from './Photo'
 import { useSection } from '../kit'
 
-// The head, then the form on the surface ground beside the photograph, the address and the way
-// there closing the panel. system.js runs the form: errors under their fields on submit, the
-// status line, no success line for the mailto stand-in.
+// The head, then the form on the surface ground beside the photograph; the address, the phone, the
+// email and the way there close the panel. system.js runs the form: errors under their fields on
+// submit, the status line. The form opens a mail to the firm's own address, so no sent line shows.
 export default function Book() {
   useSection('book')
   return (
@@ -39,9 +39,13 @@ export default function Book() {
               <p className="form__status" role="status" data-form-status="" />
               <p className="t-small muted">{book.reply}</p>
             </form>
-            <div className="stack-2 book__where">
-              <address className="visit__address">{firm.address}</address>
-              <p><a className="link" href={firm.directions}>{book.directions}</a></p>
+            <div className="stack-4 book__where">
+              <address className="visit__address">{firm.address}<br />{firm.postal}</address>
+              <p className="book__reach">
+                <a className="link" href={firm.phoneHref}>{firm.phone}</a>
+                <a className="link" href={`mailto:${firm.email}`}>{firm.email}</a>
+                <a className="link" href={firm.directions}>{book.directions}</a>
+              </p>
             </div>
           </div>
           <Photo photo={photos.book} className="span-6 start-7 book__photo" delay={120} />

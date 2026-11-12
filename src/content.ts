@@ -1,13 +1,24 @@
 // Every word on the page, in one place, so the firm can change it without touching markup.
 // Facts only: what the public record gives (the approved-firm lists for 2024 to 2026, the URSB
-// trademark-agent register, the Buganda Road address). Nothing here is invented.
+// trademark-agent register, the Buganda Road address) and the contacts the firm supplied (phone,
+// email, P.O. Box), printed exactly as given. Nothing here is invented.
 
 export const firm = {
   name: 'Kibazo Associated Advocates',
   address: 'Mukwano Courts, Buganda Road, Kampala',
+  postal: 'P.O. Box 15906, Kampala',
+  // the same address in the parts search engines read (src/seo.ts)
+  street: 'Mukwano Courts, Buganda Road',
+  city: 'Kampala',
+  country: 'UG',
+  poBox: '15906',
+  phone: '0700901610',
+  phoneIntl: '+256700901610',
+  phoneHref: 'tel:+256700901610',
+  email: 'Kibazo.nasser@gmail.com',
   directions: 'https://www.openstreetmap.org/search?query=Buganda%20Road%20Kampala',
-  // a stand-in until the firm gives its form service or address; never printed on the page
-  formAction: 'mailto:office@kibazo.example',
+  // the booking form opens a mail to the firm's own address
+  formAction: 'mailto:Kibazo.nasser@gmail.com',
   year: 2026,
 }
 
@@ -91,6 +102,7 @@ export const book = {
   h2: 'Book a consultation',
   line: 'Write what the matter is about and a day that suits you.',
   directions: 'Get directions',
+  call: 'Call the firm',
   fields: [
     { id: 'name', label: 'Name', type: 'text', autoComplete: 'name', error: 'Write the name the booking is under.' },
     { id: 'email', label: 'Email', type: 'email', autoComplete: 'email', error: 'Write an email address with an @, like name@example.com.' },
@@ -104,14 +116,9 @@ export const closing = {
   h2: 'A first meeting on Buganda Road',
   line: 'Court matters and trademark filings, from Kampala.',
   lede: 'Advocates and trademark agents, Kampala.',
-  columns: [
-    { head: 'Services', links: [{ label: 'Court and trademark services', href: '#services' }] },
-    { head: 'About', links: [{ label: 'The firm', href: '#about' }] },
-    {
-      head: 'Courts',
-      links: [{ label: 'The courts and the registry', href: '#courts' }],
-    },
-    { head: 'Questions', links: [{ label: 'Questions', href: '#questions' }] },
-  ],
-  credits: { label: 'Photographs via Wikimedia Commons', href: '/credits.html' },
+  // the nav's words in the nav's order, then how to reach the firm and where it is
+  pages: { head: 'Pages', links: nav },
+  contactHead: 'Contact',
+  officeHead: 'Office',
+  credits: { label: 'Photographs via Wikimedia Commons and Pexels', href: '/credits.html' },
 }

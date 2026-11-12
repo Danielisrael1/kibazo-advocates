@@ -1,7 +1,12 @@
 [
   {
-    "check": "section-gaps",
-    "target": "hero--photo / section#services",
-    "reason": "the dealt photo hero's phone layout: layout.css top-aligns the words under the 42svh photograph, so the first screen's content ends short of the fold; the gap to the services h2 is the kit's own hero geometry at 390"
+    "check": "phone-number",
+    "target": "\"tel:+256700901610\"",
+    "reason": "the firm's own phone number, supplied by the user on 2026-11-11 (Kibazo Associated Advocates, 0700901610); copy.md prints a number the brief gives exactly as given"
+  },
+  {
+    "check": "phone-number",
+    "target": "a.link:nth-of-type(1) \"0700901610\"",
+    "reason": "the same supplied number printed as the visible link text in the booking panel; it is the firm's real contact, not an invented one"
   }
 ]
